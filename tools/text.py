@@ -56,7 +56,7 @@ def dump(force=False):
             else:
                 first[off] = e["id"]
             entries.append(e)
-        path.write_text(json.dumps(entries, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
+        path.write_text(json.dumps(entries, ensure_ascii=False, indent=1) + "\n", encoding="utf-8", newline="\n")
         print(f"wrote {path} ({len(entries)} entries)")
 
 
