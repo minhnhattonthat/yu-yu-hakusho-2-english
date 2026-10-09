@@ -31,6 +31,7 @@ BATCHES = {
     "b03": rng(0xB0, 0xF7) + rng(0x100, 0x101) + rng(0x103, 0x104),
     "special": ["M003", "M004", "M005", "M01E", "M01F"] + rng(0x64, 0x6F) + ["M0F8", "M0F9", "M102"],
     "subs": [f"S{i:03X}" for i in range(64)],
+    "credits": ["M0FA", "M0FB"] + rng(0x11C, 0x127),
     "other": [f"B{i:02X}" for i in range(23)] + [f"T{i:02X}" for i in range(1, 6)] + ["P00"],
 }
 CTRL = re.compile(r"\{[^}]*\}")
@@ -53,7 +54,7 @@ def save(entries):
 
 def batch_entries(name):
     ids = set(BATCHES[name])
-    return [e for e in load() if e["id"] in ids and "same_as" not in e and e["id"] not in ("M11C",)]
+    return [e for e in load() if e["id"] in ids and "same_as" not in e]
 
 
 def glossary():
@@ -92,7 +93,7 @@ def check_entry(mid, jp, en, terms):
     _, werrs = fit.wrap(en, mid)
     errs += werrs
     low = en.lower()
-    rest = jp
+    rest = "" if mid in BATCHES["credits"] else jp    # credits: cast rows hold short names; drawn with another font
     for tj, ten, avoid in sorted(terms, key=lambda t: -len(t[0])):   # longest first: 霊界たんてい before 霊界
         if tj in rest:
             rest = rest.replace(tj, "\0")

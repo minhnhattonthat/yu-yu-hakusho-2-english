@@ -82,6 +82,13 @@ GRIDS = {mid: MOVE_GRID for mid in ["M01E", "M01F"] + [f"M{i:03X}" for i in rang
 GRIDS["M004"] = [5, 3, 4, 3, 6, 4, 7, 5, 4, 6, 5, 2, 2, 5, 4, 4, 1, 1, 2, 1, 3]
 GRIDS["M005"] = GRIDS["M004"][8:]
 GRIDS.update({f"T{i:02X}": [8, 1] for i in range(1, 5)})   # tally label | digit cell the game overwrites
+CREDITS = ["M0FA", "M0FB"] + [f"M{i:03X}" for i in range(0x11C, 0x128)]
+# Staff roll: role and name runs; the roll's tilemap reuses cells (くん = 20+49, ちゃん = 47-49, ママ = 39 twice).
+GRIDS["M0FA"] = [4, 5, 2, 1, 4, 3, 1, 6, 4, 4, 4, 1, 3, 1, 3, 2, 1, 5, 2, 4, 5, 6, 2, 2, 2, 1, 4, 6, 8, 4, 5, 4, 6,
+                 1, 1, 1, 1, 3]
+GRIDS["M0FB"] = [4, 4, 4, 5, 6, 6, 8, 5, 2, 4]
+GRIDS["M11C"] = [4]
+GRIDS.update({f"M{i:03X}": [7, 5] for i in range(0x11D, 0x128)})   # cast: 7-cell row over a 5-cell row
 
 
 def layout_width(s):
@@ -104,13 +111,14 @@ def grid_text(mid, en):
         raise SystemExit(f"{mid}: {len(rows)} rows > {len(spans)} runs")
     out = []
     for row, span in zip(rows, spans):
-        right = row.startswith(">")
-        row = row[1:].strip() if right else row
+        align = row[:1] if row[:1] in (">", "^") else ""
+        row = row[1:].strip() if align else row
         w = layout_width(row)
-        if w > span * 16:
+        if w - 1 > span * 16:              # width ends in a shadow/gap column that may fall off the edge
             raise SystemExit(f"{mid}: row {row!r} is {w}px > {span * 16}px")
-        if right:
-            row = " " * ((span * 16 - w) // fit.WIDTHS[0]) + row
+        if align:
+            pad = max(0, span * 16 - w) // (1 if align == ">" else 2)
+            row = " " * (pad // fit.WIDTHS[0]) + row
             w = layout_width(row)
         used = -(-w // 16)
         out.append(row + ("{tab}" if w % 16 else "") + "　" * (span - used))
@@ -163,8 +171,8 @@ def insert(rom, entries, table_off, alloc, mode, widths):
     for i, e in enumerate(entries):
         src = entries_by_id[e["same_as"]] if "same_as" in e else e
         if src["id"] not in placed:
-            if mode == "cells" and src["id"] in GRIDS:      # each cell shows its stream index (mod 100)
-                n = sum(GRIDS[src["id"]])
+            if mode == "cells" and (src["id"] in GRIDS or src["id"] in CREDITS):   # cells show stream index % 100
+                n = sum(GRIDS[src["id"]]) if src["id"] in GRIDS else len(TOKEN.sub("", src["jp"]))
                 data = encode_en("".join(f"{k % 100}{{tab}}" for k in range(1, n + 1)))
             elif mode in ("marker", "cells"):
                 data = encode_en(marker(src, widths))

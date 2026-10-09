@@ -39,13 +39,19 @@ def parse(text):
     return glyphs
 
 
+def left_margin(rows):
+    cols = [x for row in rows for x, c in enumerate(row) if c == "#"]
+    return min(cols) if cols else 0
+
+
 def pixels(rows):
-    """16x8 grid of palette indices with shadow."""
+    """16x8 grid of palette indices with shadow; art shifted left to its first inked column (VWF)."""
     px = [[0] * 8 for _ in range(16)]
+    shift = left_margin(rows)
     for y, row in enumerate(rows):
         for x, c in enumerate(row):
             if c == "#":
-                px[TOP + y][x] = STROKE
+                px[TOP + y][x - shift] = STROKE
     if SHADOW:
         for y in range(15, -1, -1):
             for x in range(7, -1, -1):
@@ -67,7 +73,7 @@ def encode(px):
 
 def width(rows):
     cols = [x for row in rows for x, c in enumerate(row) if c == "#"]
-    return max(cols) + 2 if cols else SPACE_W
+    return max(cols) - min(cols) + 2 if cols else SPACE_W
 
 
 def build():

@@ -1503,13 +1503,13 @@
   "id": "M0FA",
   "off": "047463",
   "jp": "スタッフプログラム強交石こういちひとみくオブジェクトたけぴぃのりたつみきまさマいぶし鏡ゆきえちゃんバトル↑気石義げんとく道ジュアルグラフィックゆきまきちいマサウンドコンポーザーＴ．高見技高ＤＡあっしんスペシャルサンクスまのせんいちえりんけじろう{end}",
-  "en": ""
+  "en": "^Staff | Program | Nitta | | Koichi | Hitomi | | Objects | Takepii | Noritatsu | Mikimasa | ^Ma | Ibushi | Gin | Yukie | | | Battle Stages | Ishii | Gentoku | Visual | Graphics | Yuki | Maki | >Chii | ^Ma | Sound | Composer | T. Ichida | Asshin | Special | Thanks | Mano Senichi | >E | ^ri | n | >Ke | jiro"
  },
  {
   "id": "M0FB",
   "off": "047559",
   "jp": "デ道へいＤＡＲ境カッピャちゃっぴーディレクターヨーデル母不Ｍプロダクションあんりょく負画ゆきりん{end}",
-  "en": ""
+  "en": "Debihei | DARK | Kappya | Chappy | Director | Yodel Tanimura | M Production | Anryoku | Plan | Yukirin"
  },
  {
   "id": "M0FC",
@@ -1707,72 +1707,72 @@
   "id": "M11C",
   "off": "046719",
   "jp": "毒の出玉{end}",
-  "en": ""
+  "en": "^Voice Cast"
  },
  {
   "id": "M11D",
   "off": "046723",
   "jp": "浦飯幽助　　　国々暗　望{end}",
-  "en": ""
+  "en": "^Nozomu Sasaki | ^Yusuke"
  },
  {
   "id": "M11E",
   "off": "04673D",
   "jp": "桑原和真　　　千荘　下　{end}",
-  "en": ""
+  "en": "^Shigeru Chiba | ^Kuwabara"
  },
  {
   "id": "M11F",
   "off": "046757",
   "jp": "蔵馬　　　　　院方　霊美{end}",
-  "en": ""
+  "en": "^Megumi Ogata | ^Kurama"
  },
  {
   "id": "M120",
   "off": "046771",
   "jp": "飛影　　　　　裏事　修一{end}",
-  "en": ""
+  "en": "^Nobuyuki Hiyama | ^Hiei"
  },
  {
   "id": "M121",
   "off": "04678B",
   "jp": "朱雀　　　　　飛交　想界{end}",
-  "en": ""
+  "en": "^Nobuo Tobita | ^Suzaku"
  },
  {
   "id": "M122",
   "off": "0467A5",
   "jp": "酎　　　　　　若餓　怪息{end}",
-  "en": ""
+  "en": "^Norio Wakamoto | ^Chu"
  },
  {
   "id": "M123",
   "off": "0467BF",
   "jp": "陣　　　　　　事着　勝回{end}",
-  "en": ""
+  "en": "^Kappei Yamaguchi | ^Jin"
  },
  {
   "id": "M124",
   "off": "0467D9",
   "jp": "死々若丸　　　森会　格一{end}",
-  "en": ""
+  "en": "^Toshiyuki Morikawa | ^Shishiwakamaru"
  },
  {
   "id": "M125",
   "off": "0467F3",
   "jp": "幻海　　　　　苦交　氷子{end}",
-  "en": ""
+  "en": "^Hisako Kyoda | ^Genkai"
  },
  {
   "id": "M126",
   "off": "04680D",
   "jp": "覆面・少女幻海奥原めぐみ{end}",
-  "en": ""
+  "en": "^Megumi Hayashibara | ^Young Genkai"
  },
  {
   "id": "M127",
   "off": "046827",
   "jp": "戸愚呂　　　　家交　鬼金{end}",
-  "en": ""
+  "en": "^Tessho Genda | ^Toguro"
  }
 ]
