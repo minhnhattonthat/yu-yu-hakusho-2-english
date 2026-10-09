@@ -22,8 +22,12 @@ lorom
 !code     = $09BE           ; word
 ; asar sizes immediates by how they are written, not by the M/X flags: use $xx in 8-bit code, $xxxx in 16-bit.
 
-!mirror   = $8000           ; $7E8000: WRAM mirror of the 64 text cells at VRAM $6000 (64 bytes per cell:
-                            ; TL, TR, BL, BR 2bpp tiles); the original clear routine already zeroes it
+!mirror   = $6C00           ; $7E6C00-$7E7FFF: WRAM mirror of 80 text cells at VRAM $6000 (64 bytes per cell:
+                            ; TL, TR, BL, BR 2bpp tiles). Free after boot (wramuse.lua). Cells are zeroed when
+                            ; the pen first enters them, so the box clear needn't touch it.
+!mirror_end = $1400         ; 80 cells (mode select uses cells 1-77)
+!staging  = $8000           ; $7E8000: the original upload buffer read by the NMI routine
+!base     = $0AF4           ; word: mirror offset that staging byte 0 holds while an upload is pending
 
 ; ---- hooks ----
 org $80D966                 ; main stream pointer lookup (after JSR $DA4B; M8 X16, DB=$80)
@@ -230,9 +234,9 @@ draw_ascii:
     inc
     inc
     asl #6
-    cmp #$1000
+    cmp #!mirror_end
     bcc +
-    lda #$1000
+    lda #!mirror_end
 +   cmp !dmahi
     bcc +
     sta !dmahi
@@ -351,36 +355,69 @@ draw_ascii:
     rep #$30
     rts
 
-; queue mirror bytes [dmalo, dmahi) for the NMI upload ($80:8C17: VRAM $B5 + $B9/2 <- $7E8000 + $B9, up to $B7)
+; Queue mirror bytes [dmalo, dmahi) for the NMI upload ($80:8C17 copies staging $7E8000 + $B9 .. $B7 to VRAM
+; $B5 + $B9/2). While a text upload is pending, staging byte 0 = mirror offset !base, and later glyphs of the same
+; frame (immediate strings) extend it; otherwise staging restarts at dmalo. (A16 X16, DB=$7E)
 queue_dma:
     lda !dmahi
     cmp !dmalo
-    beq .ret
-    sep #$20
+    bne +
+    rts
++   sep #$20
     lda $B3
     rep #$20
     and #$0001
-    bne .merge
+    beq .fresh
     lda !dmalo
-    sta $B9
+    cmp !base
+    bcc .refill
+    ; extend: copy [dmalo, dmahi) to staging + (dmalo - base)
+    sec
+    sbc !base
+    clc
+    adc #!staging
+    tay
     lda !dmahi
-    sta $B7
-    bra .go
-.merge:
-    lda !dmalo
-    cmp $B9
-    bcs +
-    sta $B9
-+   lda !dmahi
+    sec
+    sbc !base
     cmp $B7
-    bcc .go
+    bcc +
     sta $B7
-.go:
-    lda #$6000
++   bra .copy
+.refill:                    ; new range starts left of the pending one: restage [dmalo, max(dmahi, base+B7))
+    lda !base
+    clc
+    adc $B7
+    cmp !dmahi
+    bcc .fresh
+    sta !dmahi
+.fresh:
+    lda !dmalo
+    sta !base
+    lsr
+    clc
+    adc #$6000
     sta $B5
+    stz $B9
+    lda !dmahi
+    sec
+    sbc !dmalo
+    sta $B7
+    ldy #!staging
+.copy:
+    lda !dmalo
+    clc
+    adc #!mirror
+    tax
+    lda !dmahi
+    sec
+    sbc !dmalo
+    dec
+    phb
+    mvn $7E,$7E
+    plb
     lda #$0001
     tsb $B3
-.ret:
     rts
 
 mul_table:                  ; 1 << (8 - sub), sub = 1..7 (entry 0 unused)
