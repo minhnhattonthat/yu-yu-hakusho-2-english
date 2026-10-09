@@ -21,655 +21,655 @@
   "id": "M003",
   "off": "042BB7",
   "jp": "終了は　セレクトボタン{end}",
-  "en": ""
+  "en": "Press SELECT to quit"
  },
  {
   "id": "M004",
   "off": "042BCF",
   "jp": "スト―リ―モ―ド大武術会バトルトレ―ニングサウンドゲ―ムスタ―トオプションステレオミュ―ジックエフェクト　０　０Ｂボタンでぬけますセレクト１ＰＶＳ２ＣＯＭ{end}",
-  "en": ""
+  "en": "Story | | Tournament | Battle | Training | Sound | Start Game | Options | Stereo | Music | Effects | 　０ | 　０ | >Press B | to exit | Mode Select | >1 | P |   VS | >2 | COM"
  },
  {
   "id": "M005",
   "off": "042C19",
   "jp": "ステレオミュ―ジックエフェクト　０　０Ｂボタンでぬけますセレクト１ＰＶＳ２ＣＯＭ{end}",
-  "en": ""
+  "en": "Stereo | Music | Effects | 　０ | 　０ | >Press B | to exit | Mode Select | >1 | P |   VS | >2 | COM"
  },
  {
   "id": "M006",
   "off": "042C6B",
   "jp": "{clr}さあ　だれが戦うか{n}決定してください！{end}",
-  "en": ""
+  "en": "{clr}Now then, who will fight? Make your choice!"
  },
  {
   "id": "M007",
   "off": "042C95",
   "jp": "{clr}おおっと！{n}{name2}選手だ！{end}",
-  "en": ""
+  "en": "{clr}Ooh! It's {name2}!"
  },
  {
   "id": "M008",
   "off": "042CAF",
   "jp": "{clr}それに　たいするは！{end}",
-  "en": ""
+  "en": "{clr}And facing them...!"
  },
  {
   "id": "M009",
   "off": "042CC7",
   "jp": "{clr}{name2}選手だ！{end}",
-  "en": ""
+  "en": "{clr}{name2}!"
  },
  {
   "id": "M00A",
   "off": "042CD5",
   "jp": "{clr}戦うステ―ジを{n}選んでください！{end}",
-  "en": ""
+  "en": "{clr}Please choose a stage to fight on!"
  },
  {
   "id": "M00B",
   "off": "042CF9",
   "jp": "{clr}それでは{n}試合開始です！{end}",
-  "en": ""
+  "en": "{clr}And now, let the match begin!"
  },
  {
   "id": "M00C",
   "off": "042D15",
   "jp": "{clr}それじゃ　戦う人を{n}決めてくださ―い！{end}",
-  "en": ""
+  "en": "{clr}Okay, choose who'll fight, pleeease!"
  },
  {
   "id": "M00D",
   "off": "042D3F",
   "jp": "{clr}{name2}選手ですね！{end}",
-  "en": ""
+  "en": "{clr}So it's {name2}!"
  },
  {
   "id": "M00E",
   "off": "042D51",
   "jp": "{clr}それに　たいするは？{end}",
-  "en": ""
+  "en": "{clr}And facing them?"
  },
  {
   "id": "M00F",
   "off": "042D69",
   "jp": "{clr}{name2}選手で―す！{end}",
-  "en": ""
+  "en": "{clr}It's {name2}!"
  },
  {
   "id": "M010",
   "off": "042D7B",
   "jp": "{clr}戦うステ―ジを{n}選んでくださ―い！{end}",
-  "en": ""
+  "en": "{clr}Choose a stage to fight on, pleeease!"
  },
  {
   "id": "M011",
   "off": "042DA1",
   "jp": "{clr}それでは{n}試合開始しま―す！{end}",
-  "en": ""
+  "en": "{clr}And now, the match beeegins!"
  },
  {
   "id": "M012",
   "off": "042DC1",
   "jp": "{clr}さあさあ　だれが戦うか{n}決めておくれよ！{end}",
-  "en": ""
+  "en": "{clr}Come on, come on, decide who's gonna fight!"
  },
  {
   "id": "M013",
   "off": "042DED",
   "jp": "{clr}{name2}だね！{end}",
-  "en": ""
+  "en": "{clr}{name2}, eh!"
  },
  {
   "id": "M014",
   "off": "042DF9",
   "jp": "{clr}その　相手は？{end}",
-  "en": ""
+  "en": "{clr}And the opponent?"
  },
  {
   "id": "M015",
   "off": "042E0B",
   "jp": "{clr}{name2}だね！{end}",
-  "en": ""
+  "en": "{clr}It's {name2}, then!"
  },
  {
   "id": "M016",
   "off": "042E17",
   "jp": "{clr}どこで　戦うんだい？{end}",
-  "en": ""
+  "en": "{clr}So where're you gonna fight?"
  },
  {
   "id": "M017",
   "off": "042E2F",
   "jp": "{clr}それじゃ　勝負を{n}始めようか！{end}",
-  "en": ""
+  "en": "{clr}Well then, let's get this match started!"
  },
  {
   "id": "M018",
   "off": "042E51",
   "jp": "{clr}勝者！　{name2}‼{end}",
-  "en": ""
+  "en": "{clr}The winner! {name2}!!"
  },
  {
   "id": "M019",
   "off": "042E61",
   "jp": "{clr}{name2}の勝ちだよ！{end}",
-  "en": ""
+  "en": "{clr}{name2} wins!"
  },
  {
   "id": "M01A",
   "off": "042E73",
   "jp": "{clr}まっ　まってくれ！{n}はなせばわかる‼{end}",
-  "en": ""
+  "en": "{clr}W-wait! We can talk this out!!"
  },
  {
   "id": "M01B",
   "off": "042E9B",
   "jp": "Ａボタンで　パンチ力を{n}タイミングよく決定して{n}くれ！{end}",
-  "en": ""
+  "en": "Press the A Button with good timing to set your punch power!"
  },
  {
   "id": "M01C",
   "off": "042ED3",
   "jp": "{clr}はっひょう―――‼{end}",
-  "en": ""
+  "en": "{clr}And the results are--!!"
  },
  {
   "id": "M01D",
   "off": "042EE9",
   "jp": "{clr}こなごなになって　反省{n}しやがれ‼{end}",
-  "en": ""
+  "en": "{clr}Get smashed to bits and think about what you did!!"
  },
  {
   "id": "M01E",
   "off": "046841",
   "jp": "霊撃コマンド入力方法　＜幽助＞　　　　　・霊丸　　　　　↓↘→・パンチ　　・ショットガン　　　　→↓↘・パンチ　　　・超霊丸　　　　　　　　→↘↓↙←→・（Ｘ＋Ｒ）{end}",
-  "en": ""
+  "en": "Spirit Attack Commands | <Yusuke> | -Spirit Gun | ↓↘→ + Punch | -Shotgun | →↓↘ + Punch | -Super Spirit Gun | →↘↓↙←→ (X+R)"
  },
  {
   "id": "M01F",
   "off": "0468E7",
   "jp": "霊撃コマンド入力方法　＜桑原＞　　　　　・霊剣　　　　　↓↙←・パンチ　　・首位打者剣　　　　　←↙↓↘→・パンチ　・ダッシュ霊剣　　　　　←ため　→・キック　　　・霊剣二刀流　　　　　　　↓↘→・パンチ　　　　　・巨大霊気棒　　　　　　　↓→↘↓↙←・（Ｘ＋Ｒ）{end}",
-  "en": ""
+  "en": "Spirit Attack Commands | <Kuwabara> | -Spirit Sword | ↓↙← + Punch | -Batting Champ Sword | ←↙↓↘→ + Punch | -Dash Spirit Sword | Hold ← then → + Kick | -Twin Spirit Swords |     ↓↘→ + Punch | -Giant Spirit Club | ↓→↘↓↙← (X+R)"
  },
  {
   "id": "M020",
   "off": "042F0F",
   "jp": "ざっと　こんなもんよ！{end}",
-  "en": ""
+  "en": "That's how it's done!"
  },
  {
   "id": "M021",
   "off": "042F27",
   "jp": "うっし！{n}ぜっこうちょう‼{end}",
-  "en": ""
+  "en": "Alright! I'm on fire!!"
  },
  {
   "id": "M022",
   "off": "042F43",
   "jp": "やったぜ‼{end}",
-  "en": ""
+  "en": "Yeah, I did it!!"
  },
  {
   "id": "M023",
   "off": "042F4F",
   "jp": "うるせ―！{n}まだまだ　これからだ‼{end}",
-  "en": ""
+  "en": "Shut up! I'm just getting started!!"
  },
  {
   "id": "M024",
   "off": "042F73",
   "jp": "くっそ―　ざけんな！{n}こんどは負けね―ぞ‼{end}",
-  "en": ""
+  "en": "Dammit, screw this! I won't lose next time!!"
  },
  {
   "id": "M025",
   "off": "042F9F",
   "jp": "オレさまの力を　おもい{n}しったか！{end}",
-  "en": ""
+  "en": "Now you know the power of the great Kuwabara!"
  },
  {
   "id": "M026",
   "off": "042FC3",
   "jp": "だっはっはっ！{n}ちょろいもんよ‼{end}",
-  "en": ""
+  "en": "Dahahaha! Easy as pie!!"
  },
  {
   "id": "M027",
   "off": "042FE5",
   "jp": "やっぱりオレさまが{n}ナンバ―ワンだぜ‼{end}",
-  "en": ""
+  "en": "See? I'm number one after all!!"
  },
  {
   "id": "M028",
   "off": "04300D",
   "jp": "くっそ―　なめやがって{n}テメ―はぜったいオレが{n}ぶったおすぜ‼{end}",
-  "en": ""
+  "en": "Dammit, you're mocking me! I swear I'll be the one who takes you down!!"
  },
  {
   "id": "M029",
   "off": "04304D",
   "jp": "くっそ―！　もういちど{n}勝負しやがれ‼{end}",
-  "en": ""
+  "en": "Dammit! Fight me again!!"
  },
  {
   "id": "M02A",
   "off": "043075",
   "jp": "へっ！　きょうは{n}これくらいに　しといて{n}やるぜ‼{end}",
-  "en": ""
+  "en": "Heh! I'll let you off easy... this time!!"
  },
  {
   "id": "M02B",
   "off": "0430A9",
   "jp": "どうやら勝負は　オレの{n}勝ちのようだね……{end}",
-  "en": ""
+  "en": "It seems the match is mine..."
  },
  {
   "id": "M02C",
   "off": "0430D5",
   "jp": "きょうのところは{n}おとなしく　かえって{n}くれないか………{end}",
-  "en": ""
+  "en": "Would you kindly go home quietly, just for today..."
  },
  {
   "id": "M02D",
   "off": "04310F",
   "jp": "わるいが　キミたちを{n}相手にしているヒマは{n}ないんだ………{end}",
-  "en": ""
+  "en": "Sorry, but I don't have time to deal with you people..."
  },
  {
   "id": "M02E",
   "off": "04314B",
   "jp": "まだ負けたわけじゃ{n}ないよ……　おまえは{n}かならずオレが倒す！{end}",
-  "en": ""
+  "en": "I haven't lost yet... I will defeat you, without fail!"
  },
  {
   "id": "M02F",
   "off": "04318B",
   "jp": "どうやらオレの{n}負けらしいね………{end}",
-  "en": ""
+  "en": "It seems I've lost..."
  },
  {
   "id": "M030",
   "off": "0431AF",
   "jp": "たのむ！　いま　鏡を{n}もっていかれたら………{end}",
-  "en": ""
+  "en": "Please! If the mirror is taken from me now..."
  },
  {
   "id": "M031",
   "off": "0431DD",
   "jp": "ふ………{n}はなしにならん………{end}",
-  "en": ""
+  "en": "Hn... Not even worth talking about."
  },
  {
   "id": "M032",
   "off": "0431FD",
   "jp": "そのていどの力で{n}このオレを　倒せると{n}でも　おもったのか？{end}",
-  "en": ""
+  "en": "Did you really think you could beat me with that little power?"
  },
  {
   "id": "M033",
   "off": "04323B",
   "jp": "勝負は　これからだ{n}邪眼の力を{n}なめるなよ‼{end}",
-  "en": ""
+  "en": "This fight's just begun. Don't underestimate the power of the Jagan Eye!!"
  },
  {
   "id": "M034",
   "off": "043269",
   "jp": "ふ………{n}いのちびろいしたのは{n}キサマのほうだ………{end}",
-  "en": ""
+  "en": "Hn... You're the one whose life was spared..."
  },
  {
   "id": "M035",
   "off": "04329F",
   "jp": "くそう………{n}このオレが　キサマら{n}ごときに負けるとは……{end}",
-  "en": ""
+  "en": "Damn... To think I'd lose to the likes of you..."
  },
  {
   "id": "M036",
   "off": "0432DB",
   "jp": "あたしも　もうろく{n}したもんだねぇ………{end}",
-  "en": ""
+  "en": "I must be getting senile..."
  },
  {
   "id": "M037",
   "off": "043305",
   "jp": "ほれ！　どうした？{n}それで　おしまいかい？{end}",
-  "en": ""
+  "en": "Well? What's wrong? Is that all you've got?"
  },
  {
   "id": "M038",
   "off": "043331",
   "jp": "やれやれ　さきがおもい{n}やられるねぇ………{end}",
-  "en": ""
+  "en": "Good grief, the future looks bleak..."
  },
  {
   "id": "M039",
   "off": "04335D",
   "jp": "なかなか　やってくれる{n}じゃないかい………{end}",
-  "en": ""
+  "en": "You're not half bad, are you..."
  },
  {
   "id": "M03A",
   "off": "043389",
   "jp": "あたしが　負けるなんて{n}年は　とりたく{n}ないもんだねぇ………{end}",
-  "en": ""
+  "en": "Me, losing... Getting old is no fun..."
  },
  {
   "id": "M03B",
   "off": "0433C7",
   "jp": "ちょうしに　のんじゃ{n}ないよ！{n}このヒヨッ子が‼{end}",
-  "en": ""
+  "en": "Don't get cocky, you little twerp!!"
  },
  {
   "id": "M03C",
   "off": "0433F9",
   "jp": "どうだ！{n}おもいしったか！？{end}",
-  "en": ""
+  "en": "There! Now do you understand!?"
  },
  {
   "id": "M03D",
   "off": "043417",
   "jp": "はっはっはっ！{n}それでも　戦っている{n}つもりか？{end}",
-  "en": ""
+  "en": "Hahaha! You call that fighting?"
  },
  {
   "id": "M03E",
   "off": "043449",
   "jp": "このわたしに　勝てると{n}おもっているのか！？{end}",
-  "en": ""
+  "en": "Do you truly think you can defeat me!?"
  },
  {
   "id": "M03F",
   "off": "043477",
   "jp": "ば！　ばかな‼{end}",
-  "en": ""
+  "en": "Wh-what!? Impossible!!"
  },
  {
   "id": "M040",
   "off": "043487",
   "jp": "敵ながら見事だ………{n}どうやら　わたしの{n}負けのようだ………{end}",
-  "en": ""
+  "en": "Well done, for an enemy... It seems I am defeated..."
  },
  {
   "id": "M041",
   "off": "0434C5",
   "jp": "かるいねぇ………{end}",
-  "en": ""
+  "en": "Too light..."
  },
  {
   "id": "M042",
   "off": "0434D7",
   "jp": "おやおや　きたいはずれ{n}だねぇ………{end}",
-  "en": ""
+  "en": "My, my, what a letdown..."
  },
  {
   "id": "M043",
   "off": "0434FD",
   "jp": "もっと　楽しませて{n}もらえると　おもったん{n}だが………{end}",
-  "en": ""
+  "en": "I thought you'd be more fun than this..."
  },
  {
   "id": "M044",
   "off": "043535",
   "jp": "やるねぇ………{end}",
-  "en": ""
+  "en": "Not bad..."
  },
  {
   "id": "M045",
   "off": "043545",
   "jp": "なかなか　やるねぇ……{end}",
-  "en": ""
+  "en": "You're pretty good..."
  },
  {
   "id": "M046",
   "off": "04355D",
   "jp": "ふう………{end}",
-  "en": ""
+  "en": "Phew..."
  },
  {
   "id": "M047",
   "off": "043569",
   "jp": "そんなことじゃあ{n}はなしにならないね！{end}",
-  "en": ""
+  "en": "You'll never get anywhere like that!"
  },
  {
   "id": "M048",
   "off": "043591",
   "jp": "だらしがないね！{n}死にたいのかい！？{end}",
-  "en": ""
+  "en": "How pathetic! Do you want to die!?"
  },
  {
   "id": "M049",
   "off": "0435B7",
   "jp": "おもったより{n}てごわいようだね……{end}",
-  "en": ""
+  "en": "Tougher than I thought..."
  },
  {
   "id": "M04A",
   "off": "0435DB",
   "jp": "………できる………！{end}",
-  "en": ""
+  "en": "...You're good...!"
  },
  {
   "id": "M04B",
   "off": "0435F1",
   "jp": "なかなか　できるように{n}なったね………{end}",
-  "en": ""
+  "en": "You've gotten pretty good..."
  },
  {
   "id": "M04C",
   "off": "043619",
   "jp": "テメ―　やる気あんの{n}かあ？{end}",
-  "en": ""
+  "en": "Oi, ya even tryin', mate?"
  },
  {
   "id": "M04D",
   "off": "043637",
   "jp": "おいおい　それで{n}おしまいかぁ………？{n}ヒ―ックウ{end}",
-  "en": ""
+  "en": "Oi oi, that all ya got...? *hiiic*"
  },
  {
   "id": "M04E",
   "off": "04366B",
   "jp": "しかたねぇ………{n}ほんきを　だすかあ{end}",
-  "en": ""
+  "en": "Can't be helped... Guess I'll get serious."
  },
  {
   "id": "M04F",
   "off": "043691",
   "jp": "へへへ　おめ―{n}たいしたもんだぜ{n}ったく………{end}",
-  "en": ""
+  "en": "Heheh, you're somethin' else, mate, I'll tell ya..."
  },
  {
   "id": "M050",
   "off": "0436C1",
   "jp": "おめ―　なかなか{n}やるなあ………{end}",
-  "en": ""
+  "en": "You're pretty good, mate..."
  },
  {
   "id": "M051",
   "off": "0436E3",
   "jp": "オラの　勝ちだべ！{end}",
-  "en": ""
+  "en": "I win, y'all!"
  },
  {
   "id": "M052",
   "off": "0436F7",
   "jp": "おめ―も　て―したこと{n}ね―なあ！{end}",
-  "en": ""
+  "en": "You ain't so tough after all!"
  },
  {
   "id": "M053",
   "off": "04371B",
   "jp": "おっめ―　つえ―なあ！{end}",
-  "en": ""
+  "en": "Whoa, you're strong!"
  },
  {
   "id": "M054",
   "off": "043733",
   "jp": "どっひゃああ！{n}なかなか　やるだなあ！{end}",
-  "en": ""
+  "en": "Whoa-ho-ho! You're pretty good!"
  },
  {
   "id": "M055",
   "off": "04375B",
   "jp": "きさまなど　あいてに{n}ならぬわ！{end}",
-  "en": ""
+  "en": "The likes of you are no match for me!"
  },
  {
   "id": "M056",
   "off": "04377D",
   "jp": "そのていどの力で{n}このオレを倒そうとは{n}笑止千万！{end}",
-  "en": ""
+  "en": "You thought to defeat me with such paltry power? Preposterous!"
  },
  {
   "id": "M057",
   "off": "0437B1",
   "jp": "このオレも　なめられ{n}たものだ………{end}",
-  "en": ""
+  "en": "So, even I am taken lightly..."
  },
  {
   "id": "M058",
   "off": "0437D7",
   "jp": "どうやら　ほんとうに{n}オレを　おこらせたよう{n}だな！{end}",
-  "en": ""
+  "en": "It seems you've truly made me angry!"
  },
  {
   "id": "M059",
   "off": "04380D",
   "jp": "ば！　ばかな！{end}",
-  "en": ""
+  "en": "Wh-what!? Impossible!"
  },
  {
   "id": "M05A",
   "off": "04381D",
   "jp": "こ……このオレと{n}ごかくに　戦えるヤツが{n}いたとはな……‼{end}",
-  "en": ""
+  "en": "T-to think there was someone who could fight me as an equal...!!"
  },
  {
   "id": "M05B",
   "off": "043859",
   "jp": "きたいはずれだねぇ……{end}",
-  "en": ""
+  "en": "What a letdown..."
  },
  {
   "id": "M05C",
   "off": "043871",
   "jp": "こんなものかね{n}おまえの力は………{end}",
-  "en": ""
+  "en": "Is this all your power amounts to..."
  },
  {
   "id": "M05D",
   "off": "043895",
   "jp": "ほう　なかなか{n}やるねぇ………{end}",
-  "en": ""
+  "en": "Oh, not bad..."
  },
  {
   "id": "M05E",
   "off": "0438B5",
   "jp": "さすがだねぇ………{end}",
-  "en": ""
+  "en": "Just as I expected..."
  },
  {
   "id": "M05F",
   "off": "0438C9",
   "jp": "フフン………{n}とうとう　この日が{n}きたのだな………{end}",
-  "en": ""
+  "en": "Heh... So this day has finally come..."
  },
  {
   "id": "M060",
   "off": "0438FD",
   "jp": "いまのおまえには{n}たりないものがある……{n}それは　ききかんだ！{end}",
-  "en": ""
+  "en": "There's something you lack right now... a sense of danger!"
  },
  {
   "id": "M061",
   "off": "04393D",
   "jp": "どうした？{n}おまえの力は　そんな{n}ものかね………{end}",
-  "en": ""
+  "en": "What's wrong? Is that all your power amounts to..."
  },
  {
   "id": "M062",
   "off": "04396F",
   "jp": "いい試合だったな………{end}",
-  "en": ""
+  "en": "That was a good match..."
  },
  {
   "id": "M063",
   "off": "043987",
   "jp": "れいをいうぞ………{n}こんな力をだせたのは{n}はじめてだ………{end}",
-  "en": ""
+  "en": "I thank you... This is the first time I've ever drawn out this much power..."
  },
  {
   "id": "M064",
   "off": "0469F1",
   "jp": "霊撃コマンド入力方法　＜飛影＞　　　　　・邪王炎殺煉獄焦パンチボタン連打　・邪王炎殺剣　　　　　←↙↓↘→・パンチ　・残像　　　　　　　　　↓→↘・Ｘボタン　　　　・邪王炎殺黒龍波　　　　　→↘↓↙←→・（Ｘ＋Ｒ）{end}",
-  "en": ""
+  "en": "Spirit Attack Commands |     <Hiei> | | -Fist of the Mortal Flame |         Mash Punch | -Sword of the Darkness Flame |         ←↙↓↘→ + Punch | -Afterimage |         ↓→↘ + X Button |     -Dragon of the Darkness Flame |         →↘↓↙←→ (X+R)"
  },
  {
   "id": "M065",
   "off": "046AC9",
   "jp": "霊撃コマンド入力方法　＜蔵馬＞　　　　　・薔薇棘鞭刃　　↓↘→・パンチ　　・風華円舞陣　　　　　↓ため　↑・パンチ　・妖狐変化　　　　　　　←↙↓↘→↓・（Ａ＋Ｒ）{end}",
-  "en": ""
+  "en": "Spirit Attack Commands | <Kurama> | -Rose Whip | ↓↘→ + Punch | -Rose Petal Storm | Hold ↓ then ↑ + Punch | -Fox Transformation | ←↙↓↘→↓ (A+R)"
  },
  {
   "id": "M066",
   "off": "046B6F",
   "jp": "霊撃コマンド入力方法　＜幻海＞　　　　　・霊丸　　　　　↓↘→・パンチ　　・霊光弾　　　　　　　→↓↘・パンチ　　　・空中霊丸　　　　　　　ジャンプ↓↘→・パンチ　・霊光鏡反衝　　　　　　　→↘↓↙←・パンチ　　　・超霊丸　　　　　　　　　→↘↓↙←→・（Ｘ＋Ｒ）{end}",
-  "en": ""
+  "en": "Spirit Attack Commands | <Genkai> | -Spirit Gun | ↓↘→ + Punch | -Spirit Ball | →↓↘ + Punch | -Air Spirit Gun | In air: ↓↘→ + Punch | -Spirit Mirror Repulse |     →↘↓↙← + Punch | -Super Spirit Gun | →↘↓↙←→ (X+R)"
  },
  {
   "id": "M067",
   "off": "046C79",
   "jp": "霊撃コマンド入力方法　＜朱雀＞　　　　　・暗黒雷迅拳　　←ため　→・パンチ・暗黒雷光波　　　　　←ため　→・キック　・暗黒妖籠陣　　　　　　↓ため　↑・パンチ　　　・七獄暗黒雷光波　　　　　↓ため　↑・（Ａ＋Ｒ）{end}",
-  "en": ""
+  "en": "Spirit Attack Commands | <Suzaku> | -Dark Thunder Fist | Hold ← then → + Punch | -Dark Lightning Wave | Hold ← then → + Kick | -Dark Demon Cage | Hold ↓ then ↑ + Punch | -Seven-Fold Dark Lightning |     Hold ↓ then ↑ (A+R)"
  },
  {
   "id": "M068",
   "off": "046D4F",
   "jp": "霊撃コマンド入力方法　＜酎＞　　　　　　・妖気玉　　　　↓↘→・パンチ　　・酒霧　　　　　　　　→↓↘・パンチ　　　・大妖気玉　　　　　　　←ため　→・パンチ　　　・Ｃ・ヘッドバット　　　　あいてのちかくで　　　　　→↘↓↙←・（Ｘ＋Ｒ）{end}",
-  "en": ""
+  "en": "Spirit Attack Commands | <Chu> | -Demon Ball | ↓↘→ + Punch | -Sake Mist | →↓↘ + Punch | -Giant Demon Ball | Hold ← then → + Punch | -Chu Headbutt |     Next to the opponent: |     →↘↓↙← (X+R)"
  },
  {
   "id": "M069",
   "off": "046E3F",
   "jp": "霊撃コマンド入力方法　＜陣＞　　　　　　・爆風障壁　　　→↓↘・パンチ　　・修羅旋風拳　　　　　↓↙←・パンチ　　　・空中修羅旋風拳　　　　ジャンプ↓↙←・パンチ　・ダブル修羅旋風拳　　　　←↙↓↘→・（Ｘ＋Ｒ）　{end}",
-  "en": ""
+  "en": "Spirit Attack Commands | <Jin> | -Blast Barrier | →↓↘ + Punch | -Tornado Fist | ↓↙← + Punch | -Air Tornado Fist | In air: ↓↙← + Punch | -Double Tornado Fist |     ←↙↓↘→ (X+R)"
  },
  {
   "id": "M06A",
   "off": "046F17",
   "jp": "霊撃コマンド入力方法　＜死々若丸＞　　　・魔哭鳴斬剣　　↓↘→・パンチ　　・怨呼障縛壁　　　　　↓ため　↑・パンチ　・爆吐髑触葬　　　　　　→↘↓↙←・（Ａ＋Ｒ）{end}",
-  "en": ""
+  "en": "Spirit Attack Commands | <Shishiwakamaru> | -Wailing Demon Blade | ↓↘→ + Punch | -Banshee Shriek | Hold ↓ then ↑ + Punch | -Bursting Skull Burial | →↘↓↙← (A+R)"
  },
  {
   "id": "M06B",
   "off": "046FBB",
   "jp": "霊撃コマンド入力方法　＜戸愚呂３０％＞　・旋風脚　　　　↓↙←・キック　　・ナックルクラッシャ―↓ため　↑・パンチ　・ダ―クネスボディブロ―↓←↙↓↘→・（Ｘ＋Ｒ）　{end}",
-  "en": ""
+  "en": "Spirit Attack Commands | <Toguro 30%> | -Whirlwind Kick | ↓↙← + Kick | -Knuckle Crusher | Hold ↓ then ↑ + Punch | -Darkness Body Blow | ↓←↙↓↘→ (X+R)"
  },
  {
   "id": "M06C",
   "off": "047063",
   "jp": "霊撃コマンド入力方法　＜戸愚呂１００％＞・指弾　　　　　↓↘→・パンチ　　・武装闘気　　　　　　↓ため　↑・パンチ　・爆砲波　　　　　　　　←↙↓↘・パンチ　　　　・フルパワ―タックル　　　←ため　↙↓↘→　　　　　　　　　　　　（Ｘ＋Ｒ）{end}",
-  "en": ""
+  "en": "Spirit Attack Commands | <Toguro 100%> | -Finger Flick | ↓↘→ + Punch | -Battle Aura | Hold ↓ then ↑ + Punch | -Blast Cannon | ←↙↓↘ + Punch | -Full Power Tackle |     Hold ← then ↙↓↘→ | >(X+R)"
  },
  {
   "id": "M06D",
   "off": "047155",
   "jp": "霊撃コマンド入力方法　＜覆面＞　　　　　・霊丸　　　　　↓↘→・パンチ　　・霊光弾　　　　　　　→↓↘・パンチ　　　・修の拳　　　　　　　　↙ため　↓↘→・強パンチ{end}",
-  "en": ""
+  "en": "Spirit Attack Commands | <Masked Fighter> | -Spirit Gun | ↓↘→ + Punch | -Spirit Ball | →↓↘ + Punch | -Fist of Training | Hold ↙ then ↓↘→ |     + Strong Punch"
  },
  {
   "id": "M06E",
   "off": "0471FB",
   "jp": "霊撃コマンド入力方法　＜少女幻海＞　　　・霊丸　　　　　↓↘→・パンチ　　・霊光弾　　　　　　　→↓↘・パンチ　　　・空中霊丸　　　　　　　ジャンプ↓↘→・パンチ　・超霊丸　　　　　　　　　→↘↓↙←→・（Ｘ＋Ｒ）{end}",
-  "en": ""
+  "en": "Spirit Attack Commands | <Young Genkai> | -Spirit Gun | ↓↘→ + Punch | -Spirit Ball | →↓↘ + Punch | -Air Spirit Gun | In air: ↓↘→ + Punch | -Super Spirit Gun |     →↘↓↙←→ (X+R)"
  },
  {
   "id": "M06F",
   "off": "0472D3",
   "jp": "霊撃コマンド入力方法　＜戸愚呂８０％＞　・旋風脚　　　　↓↙←・キック　　・ナックルクラッシャ―↓ため　↑・パンチ　・ダ―クネスボディブロ―↓←↙↓↘→・（Ｘ＋Ｒ）　{end}",
-  "en": ""
+  "en": "Spirit Attack Commands | <Toguro 80%> | -Whirlwind Kick | ↓↙← + Kick | -Knuckle Crusher | Hold ↓ then ↑ + Punch | -Darkness Body Blow | ↓←↙↓↘→ (X+R)"
  },
  {
   "id": "M070",
@@ -771,571 +771,571 @@
   "id": "M080",
   "off": "04434F",
   "jp": "{clr}三大秘宝を無事に{n}とりもどした幽助に、{n}休む間もなく指令が{n}下された。{end}",
-  "en": ""
+  "en": "{clr}Yusuke had safely recovered the Three Treasures, but with no time to rest, he was handed a new mission."
  },
  {
   "id": "M081",
   "off": "044399",
   "jp": "{clr}霊光波動拳という技を{n}使う幻海が、奥義を{n}つたえるために、ひろく{n}弟子をつのるという。{end}",
-  "en": ""
+  "en": "{clr}Genkai, who used a technique called the Spirit Wave, was openly recruiting disciples to pass on its ultimate secret."
  },
  {
   "id": "M082",
   "off": "0443F3",
   "jp": "{clr}その中に奥義を盗み、{n}それを使って人間を{n}殺すという極悪な妖怪が{n}まぎれている。{end}",
-  "en": ""
+  "en": "{clr}Hidden among them was a vicious demon who planned to steal the secret and use it to kill humans."
  },
  {
   "id": "M083",
   "off": "044447",
   "jp": "{clr}その妖怪を見つけだし、{n}倒すのが指令だった。{n}飛影をくわえた幽助らは{n}そのきたいに見事にこた{n}える。{end}",
-  "en": ""
+  "en": "{clr}The mission was to find that demon and defeat it. Joined by Hiei, Yusuke and the others lived up to expectations brilliantly."
  },
  {
   "id": "M084",
   "off": "0444AF",
   "jp": "{clr}だが、そのために幽助は{n}霊光波動拳の奥義の{n}継承者に選ばれてしまう{n}のだった。{end}",
-  "en": ""
+  "en": "{clr}But in doing so, Yusuke ended up chosen as the heir to the ultimate secret of the Spirit Wave."
  },
  {
   "id": "M085",
   "off": "044501",
   "jp": "{clr}幻海の、うむをいわせぬ{n}きびしいしゅぎょうが{n}いま、始まろうとして{n}いた。{end}",
-  "en": ""
+  "en": "{clr}Genkai's brutal training, no arguments allowed, was about to begin."
  },
  {
   "id": "M086",
   "off": "04454F",
   "jp": "{clr}ひとまず、幻海との{n}しゅぎょうを終えた{n}幽助たちに、あらたな{n}指令がもたらされた。{end}",
-  "en": ""
+  "en": "{clr}Their training with Genkai over for now, Yusuke and the others received a new mission."
  },
  {
   "id": "M087",
   "off": "0445A5",
   "jp": "{clr}四聖獣とよばれる妖怪が{n}人間界への　いじゅうが{n}みとめられず、魔回虫と{n}いう虫を使い、人間を{n}あやつり始めたのだ。{end}",
-  "en": ""
+  "en": "{clr}Demons called the Four Saint Beasts, denied the right to move to Human World, had begun using bugs called Makai Insects to control humans."
  },
  {
   "id": "M088",
   "off": "04461B",
   "jp": "{clr}彼らのたくらみを{n}くだくため、幽助たちは{n}魔界の四聖獣のとうへ{n}のりこむ。{end}",
-  "en": ""
+  "en": "{clr}To crush their scheme, Yusuke and the others stormed the Four Saint Beasts' tower in Demon World."
  },
  {
   "id": "M089",
   "off": "044669",
   "jp": "{clr}四聖獣のうち三人までを{n}倒した幽助たちは、{n}ついにそのリ―ダ―朱雀{n}へとたどりついた。{end}",
-  "en": ""
+  "en": "{clr}After defeating three of the Four Saint Beasts, Yusuke and the others at last reached their leader, Suzaku."
  },
  {
   "id": "M08A",
   "off": "0446C3",
   "jp": "{clr}四聖獣を見事倒した{n}幽助たちに、再び、{n}霊界から指令が下った。{end}",
-  "en": ""
+  "en": "{clr}With the Four Saint Beasts defeated, Yusuke and the others were handed another mission from Spirit World."
  },
  {
   "id": "M08B",
   "off": "044705",
   "jp": "{clr}それは垂金というおとこ{n}から、氷女という妖怪の{n}少女を救うことだった。{n}少女は雪菜といい、彼女{n}のなみだは氷泪石という{end}",
-  "en": ""
+  "en": "{clr}They were to rescue a demon girl, an Ice Maiden, from a man named Tarukane. The girl was Yukina, and her tears turned into Hiruiseki stones,"
  },
  {
   "id": "M08C",
   "off": "04477F",
   "jp": "{clr}かちのある宝石になる。{n}垂金はそれを手に入れる{n}ため、あらゆる非道な{n}ほうほうで、雪菜を{n}悲しませているのだ。{end}",
-  "en": ""
+  "en": "{clr}precious gems. To get them, Tarukane was tormenting Yukina by every vile means he could think of."
  },
  {
   "id": "M08D",
   "off": "0447F1",
   "jp": "{clr}人間として許せない！{n}垂金の別荘に　侵入した{n}幽助たち。　だが、{n}闇ブロ―カ―戸愚呂が{n}ゆくてにたちはだかる！{end}",
-  "en": ""
+  "en": "{clr}No human could forgive that! Yusuke and the others broke into Tarukane's villa. But the black-market broker Toguro stood in their way!"
  },
  {
   "id": "M08E",
   "off": "044863",
   "jp": "{clr}雪菜は飛影の妹だった。{n}助け出された雪菜は自分{n}の国へとかえり、いく日{n}かがすぎていった。{end}",
-  "en": ""
+  "en": "{clr}Yukina was Hiei's sister. Once rescued, Yukina returned to her homeland, and several days went by."
  },
  {
   "id": "M08F",
   "off": "0448C1",
   "jp": "{clr}そんなある日、あの倒し{n}たはずの戸愚呂が幽助の{n}前に現れた。{n}しかも、おそろしいほど{n}の強さで。{end}",
-  "en": ""
+  "en": "{clr}Then one day, Toguro, whom they thought they had beaten, appeared before Yusuke. And his strength was terrifying."
  },
  {
   "id": "M090",
   "off": "044925",
   "jp": "{clr}こわさで動けない幽助。{end}",
-  "en": ""
+  "en": "{clr}Yusuke was frozen with fear."
  },
  {
   "id": "M091",
   "off": "04493F",
   "jp": "{clr}戸愚呂は、そんな幽助に{n}暗黒武術会のかいさいと{n}そのゲストとして幽助・{n}桑原・蔵馬・飛影が、{n}選ばれたとつげる。{end}",
-  "en": ""
+  "en": "{clr}Toguro told the frozen Yusuke that the Dark Tournament was to be held, and that Yusuke, Kuwabara, Kurama and Hiei had been chosen as its guests."
  },
  {
   "id": "M092",
   "off": "0449B3",
   "jp": "{clr}『ことわれば、殺す』{n}戸愚呂のことばに　うそ{n}はない。生きのびるには{n}武術会にさんかし、勝ち{n}のこるしかなかった。{end}",
-  "en": ""
+  "en": "{clr}\"Refuse, and you die.\" Toguro's words were no bluff. To survive, they had no choice but to enter the tournament and win."
  },
  {
   "id": "M093",
   "off": "044A29",
   "jp": "{clr}武術会は２か月後。{n}それまでに、できるだけ{n}強くならなくては！{n}幽助は、再び幻海の{n}もとへとむかった。{end}",
-  "en": ""
+  "en": "{clr}The tournament was in two months. Until then, he had to get as strong as he could! Yusuke headed back to Genkai."
  },
  {
   "id": "M094",
   "off": "044A93",
   "jp": "{clr}暗黒武術会……　それは{n}裏社会の実力者たちが、{n}それぞれ最強と自負する{n}妖怪たちをあつめて、{n}バトルをくりひろげる{end}",
-  "en": ""
+  "en": "{clr}The Dark Tournament... The underworld's power brokers each gather the demons they boast are strongest and pit them against each other in"
  },
  {
   "id": "M095",
   "off": "044B09",
   "jp": "{clr}史上最悪の格闘技大会で{n}ある…。妖怪には、血と{n}こうふん、人間には金が{n}転がりこむ。{end}",
-  "en": ""
+  "en": "{clr}the most wicked fighting tournament in history... For demons, it means blood and excitement. For humans, money rolling in."
  },
  {
   "id": "M096",
   "off": "044B61",
   "jp": "{clr}幽助たちは、チ―ムの最{n}後の１人に覆面の戦士を{n}くわえ、見事よせんを勝{n}ちぬいた。{end}",
-  "en": ""
+  "en": "{clr}Yusuke and the others took on the Masked Fighter as their team's last member and fought their way through the preliminaries."
  },
  {
   "id": "M097",
   "off": "044BB7",
   "jp": "{clr}ほんせんの初めの相手は{n}六遊怪チ―ム。試合は{n}大将戦にもつれこんだ。{n}その相手は、酎！{end}",
-  "en": ""
+  "en": "{clr}Their first opponent in the main tournament was Team Rokuyukai. The match came down to the captains' bout. The opponent: Chu!"
  },
  {
   "id": "M098",
   "off": "044C11",
   "jp": "{clr}酎に勝った幽助たちは、{n}ベスト８にすすんだ。{n}次の対戦相手は{n}Ｄｒイチガキチ―ム。{n}だが戦う相手は、{end}",
-  "en": ""
+  "en": "{clr}Having beaten Chu, Yusuke and the others made the final eight. Their next opponent was Team Ichigaki. But the ones they had to fight were"
  },
  {
   "id": "M099",
   "off": "044C79",
   "jp": "{clr}イチガキにあやつられる{n}だけの、善良な人間の{n}武術家だった。{n}戦えない幽助たちに彼ら{n}の技がせまる！{end}",
-  "en": ""
+  "en": "{clr}good, decent human martial artists, mere puppets of Ichigaki. Their attacks closed in on Yusuke and the others, who couldn't fight back!"
  },
  {
   "id": "M09A",
   "off": "044CE1",
   "jp": "{clr}そのとき、幽助をかばい{n}技を受けた覆面は、顔の{n}ぬのがはずれ、その下か{n}らすがおをのぞかせた。{end}",
-  "en": ""
+  "en": "{clr}Just then, the Masked Fighter shielded Yusuke and took the blow. The cloth over the face came loose, revealing the real face beneath."
  },
  {
   "id": "M09B",
   "off": "044D43",
   "jp": "{clr}覆面は、幻海ではなかっ{n}た。おどろく幽助たちを{n}しりめに、覆面の少女は{n}ようしゃなく相手を秘術{n}でうち倒した。{end}",
-  "en": ""
+  "en": "{clr}The Masked Fighter wasn't Genkai. While Yusuke and the others gaped, the masked girl ruthlessly felled the opponents with a secret art."
  },
  {
   "id": "M09C",
   "off": "044DB5",
   "jp": "{clr}勝ったものの、すっきり{n}しない幽助。だが少女の{n}秘術は、じゅばくをとく{n}技であり、武術家たちは{n}無事であった！{end}",
-  "en": ""
+  "en": "{clr}They had won, but Yusuke was far from satisfied. Then it turned out the girl's secret art broke curses, and the martial artists were unharmed!"
  },
  {
   "id": "M09D",
   "off": "044E27",
   "jp": "{clr}だが、Ｄｒイチガキは許{n}せない。{n}幽助は、Ｄｒイチガキに{n}なぐりかかっていった！{end}",
-  "en": ""
+  "en": "{clr}But Dr. Ichigaki was unforgivable. Yusuke went after Dr. Ichigaki with his fists!"
  },
  {
   "id": "M09E",
   "off": "044E7B",
   "jp": "{clr}Ｄｒイチガキを見事{n}ふんさいした、幽助らの{n}次の相手は、{n}魔性使いチ―ムだった。{end}",
-  "en": ""
+  "en": "{clr}With Dr. Ichigaki smashed to pieces, Yusuke and the others faced their next opponent: Team Masho."
  },
  {
   "id": "M09F",
   "off": "044ECF",
   "jp": "{clr}彼らは、魔界の忍び。{n}けしょう使いの画魔、{n}じゅ氷使いの凍矢らを{n}幽助たちは倒した。{end}",
-  "en": ""
+  "en": "{clr}They were ninja of Demon World. Yusuke and the others defeated Gama the makeup master, Touya the cursed-ice master, and more."
  },
  {
   "id": "M0A0",
   "off": "044F27",
   "jp": "{clr}マントをぬぎ、次に現れ{n}た忍びは、風使いの陣！{n}魔性使いチ―ム、一番の{n}強さを持つおとこ！{end}",
-  "en": ""
+  "en": "{clr}Throwing off his cloak, the next ninja to appear was Jin, the wind master! The strongest man on Team Masho!"
  },
  {
   "id": "M0A1",
   "off": "044F85",
   "jp": "{clr}準決勝の前日、覆面の戦{n}士は、幽助にその正体を{n}明かした。{n}覆面のその下には、幻海{n}の顔があった。{end}",
-  "en": ""
+  "en": "{clr}The day before the semifinals, the Masked Fighter revealed her true identity to Yusuke. Beneath the mask was Genkai's face."
  },
  {
   "id": "M0A2",
   "off": "044FEB",
   "jp": "{clr}おどろく幽助に、幻海は{n}霊波動を最高にまで{n}高めることで、一時的に{n}肉体が若がえるのだ、{n}とかたった。{end}",
-  "en": ""
+  "en": "{clr}To the astonished Yusuke, Genkai explained that by raising her spirit wave energy to its peak, her body could grow young again for a while."
  },
  {
   "id": "M0A3",
   "off": "045055",
   "jp": "{clr}いまのままでは戸愚呂に{n}勝てないとみた幻海は、{n}幽助に最後の試練として{n}霊光玉をわたす。{end}",
-  "en": ""
+  "en": "{clr}Seeing that Yusuke couldn't beat Toguro as he was, Genkai gave him the Spirit Wave Orb as his final trial."
  },
  {
   "id": "M0A4",
   "off": "0450B1",
   "jp": "{clr}それは霊力を極限まで{n}凝縮したエネルギ―球。{n}だが、それを受け入れる{n}には、想像を絶するほど{n}の苦痛をともなう。{end}",
-  "en": ""
+  "en": "{clr}It was a sphere of spirit energy condensed to its limit. But taking it in meant pain beyond imagination."
  },
  {
   "id": "M0A5",
   "off": "045125",
   "jp": "{clr}『そんな試練なら、{n}大かんげいだぜ！』{n}そういった幽助だったが{n}受け入れたとたん、苦痛{n}にのたうった。{end}",
-  "en": ""
+  "en": "{clr}\"A trial like that? Bring it on!\" said Yusuke, but the moment he took it in, he was writhing in agony."
  },
  {
   "id": "M0A6",
   "off": "04518F",
   "jp": "{clr}『おまえが霊光玉を{n}受け入れるのは、１０年{n}はやい。だが、戸愚呂を{n}倒すにはこれしかない。{n}がんばるんだよ、幽助』{end}",
-  "en": ""
+  "en": "{clr}\"You're ten years too early to take in the Spirit Wave Orb. But it's the only way to beat Toguro. Hang in there, Yusuke.\""
  },
  {
   "id": "M0A7",
   "off": "045205",
   "jp": "{clr}幻海はそういいのこし、{n}闘技場にむかった。{n}おりしもそこでは、{n}死々若丸との対決が{n}始まろうとしていた。{end}",
-  "en": ""
+  "en": "{clr}With those parting words, Genkai headed for the arena. There, the match against Shishiwakamaru was just about to begin."
  },
  {
   "id": "M0A8",
   "off": "045271",
   "jp": "{clr}幽助を欠きながらも、{n}なんとか裏おとぎチ―ム{n}を倒した幻海たち。{n}おなじころ、幽助も試練{n}を乗り越えていた。{end}",
-  "en": ""
+  "en": "{clr}Even without Yusuke, Genkai and the others managed to defeat Team Uraotogi. Around the same time, Yusuke overcame his trial too."
  },
  {
   "id": "M0A9",
   "off": "0452E1",
   "jp": "{clr}わずかな休息のとき。{n}幻海は一人、戸愚呂との{n}決着をつけるため、森に{n}でむき、戸愚呂とたいじ{n}していた。{end}",
-  "en": ""
+  "en": "{clr}A brief moment of rest. Genkai went alone into the forest to settle things with Toguro, and stood facing him."
  },
  {
   "id": "M0AA",
   "off": "04534D",
   "jp": "{clr}『老いたな、幻海。{n}霊光波動拳は浦飯に継承{n}してきたのか？』{end}",
-  "en": ""
+  "en": "{clr}\"You've grown old, Genkai. Have you passed the Spirit Wave on to Urameshi?\""
  },
  {
   "id": "M0AB",
   "off": "04538D",
   "jp": "{clr}『ああ、わたしてきた』{end}",
-  "en": ""
+  "en": "{clr}\"Yes, I've passed it on.\""
  },
  {
   "id": "M0AC",
   "off": "0453A7",
   "jp": "{clr}『よろしい……{n}もうおまえに用はない。{n}いや、もはや　がまんな{n}らない、といったほうが{n}正直だな。{end}",
-  "en": ""
+  "en": "{clr}\"Good... Then I have no more use for you. No, it would be more honest to say I can't stand it any longer."
  },
  {
   "id": "M0AD",
   "off": "04540D",
   "jp": "{clr}『老いたおまえを、これ{n}以上見ていたくない』{end}",
-  "en": ""
+  "en": "{clr}\"I don't want to look at the old woman you've become any longer.\""
  },
  {
   "id": "M0AE",
   "off": "04543D",
   "jp": "{clr}『あたしも　がまんなら{n}ないね。魂をうってまで{n}つかのまの強さにしがみ{n}ついた　あんたに‼』{end}",
-  "en": ""
+  "en": "{clr}\"And I can't stand you either! You sold your soul to cling to a fleeting strength!!\""
  },
  {
   "id": "M0AF",
   "off": "04549D",
   "jp": "{clr}『ならば　どちらかが{n}消えるしかないねェ』{end}",
-  "en": ""
+  "en": "{clr}\"Then one of us will just have to disappear.\""
  },
  {
   "id": "M0B0",
   "off": "0454CB",
   "jp": "{clr}『ばあ…さん……！』{end}",
-  "en": ""
+  "en": "{clr}\"Gran...ma...!\""
  },
  {
   "id": "M0B1",
   "off": "0454E3",
   "jp": "{clr}『おそかったな………{n}浦飯』{end}",
-  "en": ""
+  "en": "{clr}\"You're too late... Urameshi.\""
  },
  {
   "id": "M0B2",
   "off": "045503",
   "jp": "{clr}『月日とはむじょうなも{n}のだ。老いた幻海の拳は{n}オレのひふに傷をつける{n}こともできなかった』{end}",
-  "en": ""
+  "en": "{clr}\"Time is merciless. Genkai's aged fists couldn't even put a scratch on my skin.\""
  },
  {
   "id": "M0B3",
   "off": "045563",
   "jp": "{clr}『ばあさん！ばあさん‼{n}しっかりしろ！』{end}",
-  "en": ""
+  "en": "{clr}\"Grandma! Grandma!! Hang in there!\""
  },
  {
   "id": "M0B4",
   "off": "04558F",
   "jp": "{clr}『幽助か………こうなる{n}のはわかっていたさ……{n}二度と出ないと決めた、{n}この大会に、また出ると{n}決めた時に……。{end}",
-  "en": ""
+  "en": "{clr}\"Yusuke... I knew it would come to this... the moment I decided to enter this tournament again, after swearing I never would..."
  },
  {
   "id": "M0B5",
   "off": "045603",
   "jp": "{clr}『あたしと戸愚呂はね、{n}幽助。５０年前に、この{n}大会に出て、優勝したん{n}だ』{end}",
-  "en": ""
+  "en": "{clr}\"Toguro and I, Yusuke... we entered this tournament fifty years ago, and we won it.\""
  },
  {
   "id": "M0B6",
   "off": "045653",
   "jp": "{clr}『あたしの望みは、二度{n}と大会に出ないことだっ{n}た………』{end}",
-  "en": ""
+  "en": "{clr}\"All I wanted was never to enter the tournament again...\""
  },
  {
   "id": "M0B7",
   "off": "045691",
   "jp": "{clr}『５０年も前に、戸愚呂{n}とばあさんが仲間だった{n}……？』{end}",
-  "en": ""
+  "en": "{clr}\"Fifty years ago, Toguro and Grandma were teammates...?\""
  },
  {
   "id": "M0B8",
   "off": "0456CD",
   "jp": "{clr}『オレは若いだろう？{n}なぜか　わかるか？{n}オレは妖怪に転生したん{n}だよ。強さをながく維持{n}するためにね。{end}",
-  "en": ""
+  "en": "{clr}\"I look young, don't I? Do you know why? I was reborn as a demon. So I could keep my strength for a long, long time."
  },
  {
   "id": "M0B9",
   "off": "045739",
   "jp": "{clr}『それが優勝の望みだっ{n}た。　……仲間はみんな{n}反対したがね』{end}",
-  "en": ""
+  "en": "{clr}\"That was the wish I won. ...My teammates were all against it, though.\""
  },
  {
   "id": "M0BA",
   "off": "04577B",
   "jp": "{clr}『幽助……人は……みな{n}…時間と闘わなきゃ……{n}ならない………。{end}",
-  "en": ""
+  "en": "{clr}\"Yusuke... every person... has to... fight against time..."
  },
  {
   "id": "M0BB",
   "off": "0457BF",
   "jp": "{clr}『やつは……にげたのさ{n}……その闘いから………{n}ほこりも……仲間も……{n}みんなすてて……{end}",
-  "en": ""
+  "en": "{clr}\"He... ran away... from that fight... He threw away... his pride... his friends... everything..."
  },
  {
   "id": "M0BC",
   "off": "04581B",
   "jp": "{clr}『おまえは……まちがえ{n}るな……幽助……おまえ{n}は……一人じゃ…ない…{n}わすれるな……誰の……{n}ために……強…く……』{end}",
-  "en": ""
+  "en": "{clr}\"Don't you... make that mistake... Yusuke... You're... not... alone... Don't forget... who you... get strong... for...\""
  },
  {
   "id": "M0BD",
   "off": "045895",
   "jp": "{clr}『ば…ばあさん……‼』{end}",
-  "en": ""
+  "en": "{clr}\"G-Grandma...!!\""
  },
  {
   "id": "M0BE",
   "off": "0458AF",
   "jp": "{clr}『………おまえがもっと{n}はやく生まれていれば、{n}こんな、みにくい幻海を{n}見なくてすんだ………{end}",
-  "en": ""
+  "en": "{clr}\"...If you'd been born sooner, you wouldn't have had to see Genkai this ugly..."
  },
  {
   "id": "M0BF",
   "off": "04590F",
   "jp": "{clr}『闘いに生きる者の道は{n}二つ。より強くなるか、{n}それとも死ぬかだ。{end}",
-  "en": ""
+  "en": "{clr}\"Those who live to fight have two paths. Get stronger, or die."
  },
  {
   "id": "M0C0",
   "off": "045955",
   "jp": "{clr}『だらだらと生きる道を{n}選んだしゅんかん、{n}そいつはすでに死んで{n}いたのだ』{end}",
-  "en": ""
+  "en": "{clr}\"The moment she chose to coast through life, she was already dead.\""
  },
  {
   "id": "M0C1",
   "off": "0459A5",
   "jp": "{clr}『……そのうすぎたねェ{n}くちをとめやがれ………{n}でねェと、この場で{n}ぶっ殺すぞ』{end}",
-  "en": ""
+  "en": "{clr}\"...Shut that filthy mouth of yours... or I'll kill you right here.\""
  },
  {
   "id": "M0C2",
   "off": "0459F9",
   "jp": "{clr}『なんどでもいおう。{n}そこのそれは………{n}くされかけた、みにくい{n}負けイヌだ』{end}",
-  "en": ""
+  "en": "{clr}\"I'll say it as often as you like. That thing there... is an ugly, half-rotten loser.\""
  },
  {
   "id": "M0C3",
   "off": "045A4B",
   "jp": "{clr}『………てめえっ‼』{end}",
-  "en": ""
+  "en": "{clr}\"...You bastard!!\""
  },
  {
   "id": "M0C4",
   "off": "045A63",
   "jp": "{clr}『浦飯……とうとうくる{n}のだな！　１００％の{n}オレで　闘える日が！{end}",
-  "en": ""
+  "en": "{clr}\"Urameshi... it's finally coming! The day I can fight at 100%!"
  },
  {
   "id": "M0C5",
   "off": "045AA9",
   "jp": "{clr}『明日を　楽しみにして{n}いるぞ‼　浦飯‼』{end}",
-  "en": ""
+  "en": "{clr}\"I'm looking forward to tomorrow!! Urameshi!!\""
  },
  {
   "id": "M0C6",
   "off": "045AD7",
   "jp": "{clr}『ばあさん…………{n}オレは、戸愚呂を……{n}許さねェ……‼』{end}",
-  "en": ""
+  "en": "{clr}\"Grandma... I'll never... forgive Toguro...!!\""
  },
  {
   "id": "M0C7",
   "off": "045B15",
   "jp": "{clr}幻海は死んだ。{n}だが、幽助はそのことを{n}誰にもいえぬままに{n}決勝戦が始まり、{end}",
-  "en": ""
+  "en": "{clr}Genkai was dead. But before Yusuke could tell anyone, the final match began,"
  },
  {
   "id": "M0C8",
   "off": "045B65",
   "jp": "{clr}ついに、戸愚呂が闘技場{n}にすがたを現した。{end}",
-  "en": ""
+  "en": "{clr}and at last, Toguro appeared in the arena."
  },
  {
   "id": "M0C9",
   "off": "045B93",
   "jp": "{clr}『まずはおさらいだ……{n}お前たちが１００％で{n}闘うにふさわしい相手か{n}どうか………{n}８０％からいくか‼』{end}",
-  "en": ""
+  "en": "{clr}\"First, a little review... Are you worth fighting at 100%...? Let's start with 80%!!\""
  },
  {
   "id": "M0CA",
   "off": "045BFF",
   "jp": "{clr}『うわ―――‼‼』{end}",
-  "en": ""
+  "en": "{clr}\"Waaaah!!\""
  },
  {
   "id": "M0CB",
   "off": "045C15",
   "jp": "{clr}『初めて『敵』にあえた{n}……………いい試合を{n}しよう………。』{end}",
-  "en": ""
+  "en": "{clr}\"At last I've met a true 'enemy'... Let's have a good match...\""
  },
  {
   "id": "M0CC",
   "off": "045C57",
   "jp": "{clr}『１００％…………』{end}",
-  "en": ""
+  "en": "{clr}\"100%...\""
  },
  {
   "id": "M0CD",
   "off": "045C6F",
   "jp": "{clr}『勝負は私の負けだ。{n}初めてだよ、いのちを{n}かけて負けたのは。{end}",
-  "en": ""
+  "en": "{clr}\"I've lost the wager. It's the first time I've ever lost with my life on the line."
  },
  {
   "id": "M0CE",
   "off": "045CB1",
   "jp": "{clr}『間もなくド―ムは{n}ほうかいする……私の{n}野心もろとも。{end}",
-  "en": ""
+  "en": "{clr}\"The dome will soon collapse... and my ambitions along with it."
  },
  {
   "id": "M0CF",
   "off": "045CED",
   "jp": "{clr}『見たかったがな………{n}人間すべてを　地獄へ{n}まねく魔界への門、{n}界境トンネルを………{n}くっくっくっ……』{end}",
-  "en": ""
+  "en": "{clr}\"I would have liked to see it... a gate to Demon World to lead all mankind into hell: the tunnel to Demon World... Heh heh heh...\""
  },
  {
   "id": "M0D0",
   "off": "045D5B",
   "jp": "{clr}『ひょえ―、もうちっと{n}おそかったら、つぶされ{n}るところだったぜ！』{end}",
-  "en": ""
+  "en": "{clr}\"Yikes! Any later and we'd have been crushed!\""
  },
  {
   "id": "M0D1",
   "off": "045DA3",
   "jp": "{clr}『終わったな………この{n}くだらん茶番も』{end}",
-  "en": ""
+  "en": "{clr}\"It's over... this pointless farce.\""
  },
  {
   "id": "M0D2",
   "off": "045DCF",
   "jp": "{clr}『でも、えるところも{n}あったんじゃないですか{n}？』{end}",
-  "en": ""
+  "en": "{clr}\"But didn't we gain something from it, too?\""
  },
  {
   "id": "M0D3",
   "off": "045E05",
   "jp": "{clr}『ところで和真………{n}優勝したら、なんでも{n}願いが　かなうんじゃ{n}なかったのかい？』{end}",
-  "en": ""
+  "en": "{clr}\"By the way, Kazuma... weren't you supposed to get any wish you wanted if you won?\""
  },
  {
   "id": "M0D4",
   "off": "045E5D",
   "jp": "{clr}『げっ！　そ―いやあ、{n}そうだった！』{end}",
-  "en": ""
+  "en": "{clr}\"Gah! Oh yeah, that's right!\""
  },
  {
   "id": "M0D5",
   "off": "045E87",
   "jp": "{clr}『い―よ、別にそんなも{n}ん。　…ど―せ、一番の{n}望みは、やつらにゃ{n}かなえられね―しよ』{end}",
-  "en": ""
+  "en": "{clr}\"Forget it, I don't need that stuff. ...The thing I want most, they can't give me anyway.\""
  },
  {
   "id": "M0D6",
   "off": "045EE3",
   "jp": "{clr}『幽助………』{end}",
-  "en": ""
+  "en": "{clr}\"Yusuke...\""
  },
  {
   "id": "M0D7",
   "off": "045EF5",
   "jp": "{clr}『お―い、ば―さ―ん！{n}勝ったぞ―――！！』{end}",
-  "en": ""
+  "en": "{clr}\"Heeey, Grandmaaa! We wooon!!\""
  },
  {
   "id": "M0D8",
   "off": "045F25",
   "jp": "{clr}『おっ！むかえのふねが{n}きたぜ！』{end}",
-  "en": ""
+  "en": "{clr}\"Oh! The boat's here to pick us up!\""
  },
  {
   "id": "M0D9",
   "off": "045F4B",
   "jp": "{clr}『よし、いくか。{n}………よっしゃあ！{n}いざ、凱旋‼』{end}",
-  "en": ""
+  "en": "{clr}\"Okay, let's go. ...Alright! Time for our triumphant return!!\""
  },
  {
   "id": "M0DA",
   "off": "045F83",
   "jp": "{clr}『オ―‼‼』{end}",
-  "en": ""
+  "en": "{clr}\"Yeah!!\""
  },
  {
   "id": "M0DB",
   "off": "045F93",
   "jp": "{clr}『おいおい　なんてつめ{n}たいんだろうね』{end}",
-  "en": ""
+  "en": "{clr}\"Well, well. How cold can you all be?\""
  },
  {
   "id": "M0DC",
   "off": "045FBF",
   "jp": "{clr}『！？{n}そのこえは………？』{end}",
-  "en": ""
+  "en": "{clr}\"!? That voice...?\""
  },
  {
   "id": "M0DD",
   "off": "045FDF",
   "jp": "{clr}『ば、ば―さん……！』{end}",
-  "en": ""
+  "en": "{clr}\"G-Grandma...!\""
  },
  {
   "id": "M0DE",
   "off": "045FF9",
   "jp": "{clr}『い、い、生き返りやが{n}った―っ！{n}はは、やった―っ‼‼』{end}",
-  "en": ""
+  "en": "{clr}\"Sh-sh-she's alive agaaain! Haha, alriiight!!\""
  },
  {
   "id": "M0DF",
@@ -1347,85 +1347,85 @@
   "id": "M0E0",
   "off": "046037",
   "jp": "{clr}『テメ―　ほんとに生き{n}返ったのか！？{n}しぶてぇヤロウだぜ！』{end}",
-  "en": ""
+  "en": "{clr}\"You really came back to life!? You're one stubborn punk!\""
  },
  {
   "id": "M0E1",
   "off": "046079",
   "jp": "{clr}『きょうこそ、誰がナン{n}バ―ワンか、おもいしら{n}せてやるぜ‼』{end}",
-  "en": ""
+  "en": "{clr}\"Today I'll show you who's number one!!\""
  },
  {
   "id": "M0E2",
   "off": "0460BB",
   "jp": "{clr}『すまないが……　いま{n}これを　わたすわけには{n}いかないんだ』{end}",
-  "en": ""
+  "en": "{clr}\"I'm sorry... but I can't hand this over just yet.\""
  },
  {
   "id": "M0E3",
   "off": "0460FD",
   "jp": "{clr}『このヤロウ！だったら{n}いつ返すんだあ！？』{end}",
-  "en": ""
+  "en": "{clr}\"You jerk! Then when ARE you giving it back!?\""
  },
  {
   "id": "M0E4",
   "off": "04612D",
   "jp": "{clr}『力づくでも　とりもど{n}してみせるぜ！』{end}",
-  "en": ""
+  "en": "{clr}\"I'll take it back by force if I have to!\""
  },
  {
   "id": "M0E5",
   "off": "046159",
   "jp": "{clr}しかし、そこでまってい{n}たのは　幻海ではなく{n}覆面で　かおをおおった{n}謎のじんぶつであった。{end}",
-  "en": ""
+  "en": "{clr}But waiting there was not Genkai, but a mysterious Masked Fighter, face hidden from view."
  },
  {
   "id": "M0E6",
   "off": "0461B9",
   "jp": "{clr}『だれだテメ―は！？{n}幻海ばあさんは　どこに{n}いったんだ！？』{end}",
-  "en": ""
+  "en": "{clr}\"Who the hell are you!? Where'd Grandma Genkai go!?\""
  },
  {
   "id": "M0E7",
   "off": "0461FB",
   "jp": "{clr}『幻海が　どこへいった{n}かなんて、わたしは{n}しらないね………』{end}",
-  "en": ""
+  "en": "{clr}\"Where Genkai went, I couldn't tell you...\""
  },
  {
   "id": "M0E8",
   "off": "04623D",
   "jp": "{clr}『そんなことより……{n}おまえ　強くなりたいん{n}だろう？』{end}",
-  "en": ""
+  "en": "{clr}\"Never mind that... You want to get stronger, don't you?\""
  },
  {
   "id": "M0E9",
   "off": "046279",
   "jp": "{clr}『わたしが　きたえて{n}やるから　さっさとかか{n}ってきな！かんがえてる{n}ヒマはないはずだよ！』{end}",
-  "en": ""
+  "en": "{clr}\"I'll train you, so hurry up and come at me! You don't have time to stand around thinking!\""
  },
  {
   "id": "M0EA",
   "off": "0462D9",
   "jp": "{clr}『なんで　そんなこと{n}まで？　まっ、テメ―が{n}だれにしても　いくしか{n}ねえけどな‼』{end}",
-  "en": ""
+  "en": "{clr}\"Why go that far? Well, whoever you are, I've got no choice but to fight!!\""
  },
  {
   "id": "M0EB",
   "off": "046331",
   "jp": "{clr}幽助たちは　戸愚呂を倒{n}し、垂金の手から雪菜を{n}救出した。{end}",
-  "en": ""
+  "en": "{clr}Yusuke and the others defeated Toguro and rescued Yukina from Tarukane's clutches."
  },
  {
   "id": "M0EC",
   "off": "04636F",
   "jp": "{clr}しかし…………{end}",
-  "en": ""
+  "en": "{clr}However..."
  },
  {
   "id": "M0ED",
   "off": "046381",
   "jp": "フッ……　わざと負ける{n}ってのも、ストレスが{n}たまるねぇ………{end}",
-  "en": ""
+  "en": "Heh... Losing on purpose sure is stressful..."
  },
  {
   "id": "M0EE",
@@ -1449,37 +1449,37 @@
   "id": "M0F1",
   "off": "0463C1",
   "jp": "{clr}『かくごしておけ…{n}きさまらはオレたちの{n}なをとどろかせるための{n}ふみだいだ！』{end}",
-  "en": ""
+  "en": "{clr}\"Get ready... You're just stepping stones to make our names known far and wide!\""
  },
  {
   "id": "M0F2",
   "off": "046415",
   "jp": "{clr}『さあ、誰からでもいい{n}さっさと{n}かかってこい！』{end}",
-  "en": ""
+  "en": "{clr}\"Now, I don't care who goes first. Hurry up and come at me!\""
  },
  {
   "id": "M0F3",
   "off": "04644B",
   "jp": "{clr}蔵馬が仲間になった！{end}",
-  "en": ""
+  "en": "{clr}Kurama joined the team!"
  },
  {
   "id": "M0F4",
   "off": "046463",
   "jp": "{clr}蔵馬は{n}薔薇棘鞭刃を{n}つかえるようになった！{end}",
-  "en": ""
+  "en": "{clr}Kurama can now use Rose Whip!"
  },
  {
   "id": "M0F5",
   "off": "046493",
   "jp": "{clr}飛影は{n}邪王炎殺煉獄焦を{n}つかえるようになった！{end}",
-  "en": ""
+  "en": "{clr}Hiei can now use Fist of the Mortal Flame!"
  },
  {
   "id": "M0F6",
   "off": "0464C7",
   "jp": "蔵馬は妖狐に{n}もどれるようになった！{end}",
-  "en": ""
+  "en": "Kurama can now return to his Yoko form!"
  },
  {
   "id": "M0F7",
@@ -1539,55 +1539,55 @@
   "id": "M100",
   "off": "0439C3",
   "jp": "{name2}は、霊撃の{n}{name3}を{n}つかえるようになった！{end}",
-  "en": ""
+  "en": "{name2} can now use the Spirit Attack {name3}!"
  },
  {
   "id": "M101",
   "off": "0439EF",
   "jp": "{name2}が　仲間になった！{end}",
-  "en": ""
+  "en": "{name2} joined the team!"
  },
  {
   "id": "M102",
   "off": "043A05",
   "jp": "おやおや{n}きたいはずれだねぇ……{n}対戦をつづけますか？{n}　　　　はい{n}　　　　いいえ{end}",
-  "en": ""
+  "en": "Well, well...{n}What a letdown...{n}Keep fighting?{n}　　　　Yes{n}　　　　No"
  },
  {
   "id": "M103",
   "off": "043A5B",
   "jp": "{clr}『フン……　３０％では{n}しつれいだったな………{end}",
-  "en": ""
+  "en": "{clr}\"Hmph... 30% was rude of me..."
  },
  {
   "id": "M104",
   "off": "043A8D",
   "jp": "{clr}『いいだろう……{n}８０％のオレを見せて{n}やろう‼』{end}",
-  "en": ""
+  "en": "{clr}\"Very well... I'll show you 80% of my power!!\""
  },
  {
   "id": "M105",
   "off": "043AC3",
   "jp": "{clr}それでは　次の相手は？{end}",
-  "en": ""
+  "en": "{clr}And now, the next opponent is?"
  },
  {
   "id": "M106",
   "off": "043ADD",
   "jp": "{clr}あ！　あれ？　もう{n}誰もいないの………？{end}",
-  "en": ""
+  "en": "{clr}Oh! Huh? There's nobody left...?"
  },
  {
   "id": "M107",
   "off": "043B09",
   "jp": "{clr}と、いうことで……{end}",
-  "en": ""
+  "en": "{clr}And so..."
  },
  {
   "id": "M108",
   "off": "043B1F",
   "jp": "{clr}優勝は{n}{name2}選手で―す！{end}",
-  "en": ""
+  "en": "{clr}The champion is... {name2}!"
  },
  {
   "id": "M109",
@@ -1635,73 +1635,73 @@
   "id": "M110",
   "off": "043B39",
   "jp": "死にて―ヤツは{n}いつでもきやがれ！{n}相手に　なってやるぜ‼{end}",
-  "en": ""
+  "en": "Anyone who wants to die, come at me anytime! I'll take you on!!"
  },
  {
   "id": "M111",
   "off": "043B75",
   "jp": "雪菜さん………{n}オレは　あなたのために{n}勝ちました………{end}",
-  "en": ""
+  "en": "Yukina... I won this for you..."
  },
  {
   "id": "M112",
   "off": "043BAF",
   "jp": "少し　ほんきを{n}だしたかな………{end}",
-  "en": ""
+  "en": "Perhaps I got a little serious..."
  },
  {
   "id": "M113",
   "off": "043BD1",
   "jp": "優勝………？　くだらん{n}きさまらに　勝っても{n}じまんにはならん………{end}",
-  "en": ""
+  "en": "Champion...? Pointless. Beating the likes of you is nothing to brag about..."
  },
  {
   "id": "M114",
   "off": "043C17",
   "jp": "まだまだ　若いもんには{n}負けやしないよ！{end}",
-  "en": ""
+  "en": "I won't lose to you youngsters just yet!"
  },
  {
   "id": "M115",
   "off": "043C41",
   "jp": "ふっふっふ{n}人間界は　まもなく{n}わたしの手に…………{end}",
-  "en": ""
+  "en": "Hehehe... Human World will soon be mine..."
  },
  {
   "id": "M116",
   "off": "043C77",
   "jp": "ふう　あたしもまだまだ{n}すてたもんじゃないね{end}",
-  "en": ""
+  "en": "Phew... I'm not washed up just yet."
  },
  {
   "id": "M117",
   "off": "043CA5",
   "jp": "フッ{n}こんなものかね……{end}",
-  "en": ""
+  "en": "Heh... Is this all there is..."
  },
  {
   "id": "M118",
   "off": "043CBF",
   "jp": "へっ　これで　たらふく{n}酒がのめるってもんよ！{end}",
-  "en": ""
+  "en": "Heh, now I can drink all the sake I want!"
  },
  {
   "id": "M119",
   "off": "043CEF",
   "jp": "やったあ―{n}オラの優勝だべ―‼{end}",
-  "en": ""
+  "en": "Yahoo! I'm the champ, y'all!!"
  },
  {
   "id": "M11A",
   "off": "043D0F",
   "jp": "フッ　はじめから{n}わかりきっていたこと{n}だが………{end}",
-  "en": ""
+  "en": "Heh... Though it was obvious from the start..."
  },
  {
   "id": "M11B",
   "off": "043D43",
   "jp": "もっと　てごたえのある{n}相手はいないのかい？{end}",
-  "en": ""
+  "en": "Isn't there an opponent with a bit more bite?"
  },
  {
   "id": "M11C",

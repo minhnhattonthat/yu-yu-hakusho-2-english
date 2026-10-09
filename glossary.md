@@ -46,7 +46,7 @@ Binding for every translator and reviewer. Agents propose additions in reports; 
 | JP | EN | notes | Avoid |
 |---|---|---|---|
 | 霊界 | Spirit World | | |
-| 魔界 | Demon World | | Makai |
+| 魔界 | Demon World | ("Makai Insects" is the one dub term that keeps Makai) | |
 | 人間界 | Human World | | |
 | 霊界たんてい | Spirit Detective | | |
 | 妖怪 | demon | | yokai, youkai |
@@ -124,4 +124,8 @@ Binding for every translator and reviewer. Agents propose additions in reports; 
 | 修の拳 | Fist of Training |
 
 ## Decisions from earlier batches
-- (none yet)
+- b01: 邪眼 -> the Jagan Eye. はっひょう (punching minigame) = 発表 -> "And the results are--!!".
+- b02: けしょう使い -> makeup master (Gama); じゅ氷使い -> cursed-ice master (Touya); 風使い -> wind master (Jin);
+  奥義 -> ultimate secret; 秘術 -> secret art; 大将戦 -> captains' bout; 忍び -> ninja.
+- b03: 仲間になった -> "joined the team!"; 妖狐 -> fox demon (not "Yoko"; matches Fox Transformation).
+- Story quotes split over pages: leave the English quote open where the JP 』 is missing (speech continues).

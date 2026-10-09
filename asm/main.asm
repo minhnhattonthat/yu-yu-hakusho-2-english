@@ -22,10 +22,10 @@ lorom
 !code     = $09BE           ; word
 ; asar sizes immediates by how they are written, not by the M/X flags: use $xx in 8-bit code, $xxxx in 16-bit.
 
-!mirror   = $6C00           ; $7E6C00-$7E7FFF: WRAM mirror of 80 text cells at VRAM $6000 (64 bytes per cell:
-                            ; TL, TR, BL, BR 2bpp tiles). Free after boot (wramuse.lua). Cells are zeroed when
-                            ; the pen first enters them, so the box clear needn't touch it.
-!mirror_end = $1400         ; 80 cells (mode select uses cells 1-77)
+!mirror   = $5800           ; $7E5800-$7E7FFF: WRAM mirror of 160 text cells at VRAM $6000 (64 bytes per cell:
+                            ; TL, TR, BL, BR 2bpp tiles). Free after boot in story, battle, training
+                            ; (wramuse.lua). Zeroed by the box clear and per cell when the pen first enters it.
+!mirror_end = $2800         ; 160 cells (mode select uses cells 1-77, move lists 1-132)
 !staging  = $8000           ; $7E8000: the original upload buffer read by the NMI routine
 !base     = $0AF4           ; word: mirror offset that staging byte 0 holds while an upload is pending
 

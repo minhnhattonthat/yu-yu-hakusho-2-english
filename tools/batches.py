@@ -29,6 +29,7 @@ BATCHES = {
     "pilot": rng(0x70, 0x7F),
     "b02": rng(0x80, 0xAF),
     "b03": rng(0xB0, 0xF7) + rng(0x100, 0x101) + rng(0x103, 0x104),
+    "special": ["M003", "M004", "M005", "M01E", "M01F"] + rng(0x64, 0x6F) + ["M0F8", "M0F9", "M102"],
 }
 CTRL = re.compile(r"\{[^}]*\}")
 
@@ -76,7 +77,7 @@ def norm(s):
 
 def check_entry(mid, jp, en, terms):
     errs = []
-    if any(ord(c) > 0x7E or ord(c) < 0x20 for c in en if c not in "↓↘→↙←↑"):
+    if any(ord(c) > 0x7E or ord(c) < 0x20 for c in en if c not in "↓↘→↙←↑　０"):
         errs.append(f"{mid}: non-ASCII/control character")
     if "\\u" in en or "\t" in en:
         errs.append(f"{mid}: escape or tab")

@@ -73,6 +73,49 @@ def flush(run, words):
     run.clear()
 
 
+# Cell-grid screens: the tilemap shows fixed runs of 16-px cells, filled in stream order. English for these ids is
+# "row | row | ...", one entry per run; ">" right-aligns a row. (docs/re/menus.md)
+MOVE_GRID = [11, 9, 8, 9, 11, 10, 12, 12, 12, 13, 13, 12]
+GRIDS = {mid: MOVE_GRID for mid in ["M01E", "M01F"] + [f"M{i:03X}" for i in range(0x64, 0x70)]}
+# Story|Mode|Tournament|Battle|Training|Sound|Start Game|Options|Stereo|Music|Effects|0|0|Press B|to exit|Select|
+# 1|P|VS|2|COM: the menu tilemaps reuse runs ("2P" = cell 74 + the "P" of "1P", every item + the shared "Mode").
+GRIDS["M004"] = [5, 3, 4, 3, 6, 4, 7, 5, 4, 6, 5, 2, 2, 5, 4, 4, 1, 1, 2, 1, 3]
+GRIDS["M005"] = GRIDS["M004"][8:]
+
+
+def layout_width(s):
+    """Pen pixels used by s: ASCII by VWF width, Japanese glyphs cell aligned (16 px)."""
+    px = 0
+    for ch in s:
+        if 0x20 <= ord(ch) < 0x7F:
+            px += fit.WIDTHS[ord(ch) - 0x20]
+        else:
+            px = -(-px // 16) * 16 + 16
+    return px
+
+
+def grid_text(mid, en):
+    """'row | row' -> stream text: each row padded to its run of cells ({tab} + full-width spaces).
+    One space after '|' is the separator; further leading spaces indent (4 px each)."""
+    rows = [(r[1:] if r.startswith(" ") else r).rstrip() for r in en.split("|")]
+    spans = GRIDS[mid]
+    if len(rows) > len(spans):
+        raise SystemExit(f"{mid}: {len(rows)} rows > {len(spans)} runs")
+    out = []
+    for row, span in zip(rows, spans):
+        right = row.startswith(">")
+        row = row[1:].strip() if right else row
+        w = layout_width(row)
+        if w > span * 16:
+            raise SystemExit(f"{mid}: row {row!r} is {w}px > {span * 16}px")
+        if right:
+            row = " " * ((span * 16 - w) // fit.WIDTHS[0]) + row
+            w = layout_width(row)
+        used = -(-w // 16)
+        out.append(row + ("{tab}" if w % 16 else "") + "　" * (span - used))
+    return "".join(out)
+
+
 FILLER = "The quick brown fox jumps over the lazy dog and keeps running far away "
 
 
@@ -119,8 +162,13 @@ def insert(rom, entries, table_off, alloc, mode, widths):
     for i, e in enumerate(entries):
         src = entries_by_id[e["same_as"]] if "same_as" in e else e
         if src["id"] not in placed:
-            if mode == "marker":
+            if mode == "cells" and src["id"] in GRIDS:      # each cell shows its stream index (mod 100)
+                n = sum(GRIDS[src["id"]])
+                data = encode_en("".join(f"{k % 100}{{tab}}" for k in range(1, n + 1)))
+            elif mode in ("marker", "cells"):
                 data = encode_en(marker(src, widths))
+            elif mode != "jp" and src.get("en") and src["id"] in GRIDS:
+                data = encode_en(grid_text(src["id"], src["en"]))
             elif mode != "jp" and src.get("en"):
                 wrapped, errs = fit.wrap(src["en"], src["id"])
                 if errs:
@@ -161,6 +209,6 @@ def build(out, mode):
 
 
 if __name__ == "__main__":
-    mode = "marker" if "--marker" in sys.argv else "en"
+    mode = "marker" if "--marker" in sys.argv else "cells" if "--cells" in sys.argv else "en"
     out = Path(sys.argv[sys.argv.index("--out") + 1]) if "--out" in sys.argv else ROOT / "build" / "yyh2_en.sfc"
     build(out, mode)
