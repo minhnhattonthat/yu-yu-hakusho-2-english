@@ -267,7 +267,7 @@
   "id": "M02C",
   "off": "0430D5",
   "jp": "きょうのところは{n}おとなしく　かえって{n}くれないか………{end}",
-  "en": "Would you kindly go home quietly, just for today..."
+  "en": "Would you kindly go home quietly, for now at least..."
  },
  {
   "id": "M02D",
@@ -387,13 +387,13 @@
   "id": "M040",
   "off": "043487",
   "jp": "敵ながら見事だ………{n}どうやら　わたしの{n}負けのようだ………{end}",
-  "en": "Well done, for an enemy... It seems I am defeated..."
+  "en": "An enemy you may be, but that was impressive... It seems I am defeated..."
  },
  {
   "id": "M041",
   "off": "0434C5",
   "jp": "かるいねぇ………{end}",
-  "en": "Too light..."
+  "en": "No weight behind your blows..."
  },
  {
   "id": "M042",
@@ -525,7 +525,7 @@
   "id": "M057",
   "off": "0437B1",
   "jp": "このオレも　なめられ{n}たものだ………{end}",
-  "en": "So, even I am taken lightly..."
+  "en": "You certainly underestimate me..."
  },
  {
   "id": "M058",
@@ -999,7 +999,7 @@
   "id": "M0A6",
   "off": "04518F",
   "jp": "{clr}『おまえが霊光玉を{n}受け入れるのは、１０年{n}はやい。だが、戸愚呂を{n}倒すにはこれしかない。{n}がんばるんだよ、幽助』{end}",
-  "en": "{clr}\"You're ten years too early to take in the Spirit Wave Orb. But it's the only way to beat Toguro. Hang in there, Yusuke.\""
+  "en": "{clr}\"It's ten years too soon for you to take in the Spirit Wave Orb. But it's the only way to beat Toguro. Hang in there, Yusuke.\""
  },
  {
   "id": "M0A7",
@@ -1479,7 +1479,7 @@
   "id": "M0F6",
   "off": "0464C7",
   "jp": "蔵馬は妖狐に{n}もどれるようになった！{end}",
-  "en": "Kurama can now return to his Yoko form!"
+  "en": "Kurama can now return to his fox demon form!"
  },
  {
   "id": "M0F7",
@@ -1557,7 +1557,7 @@
   "id": "M103",
   "off": "043A5B",
   "jp": "{clr}『フン……　３０％では{n}しつれいだったな………{end}",
-  "en": "{clr}\"Hmph... 30% was rude of me..."
+  "en": "{clr}\"Hmph... It was rude of me to face you at only 30%..."
  },
  {
   "id": "M104",

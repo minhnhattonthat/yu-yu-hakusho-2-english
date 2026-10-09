@@ -160,6 +160,27 @@ def merge(name):
     print(f"merged {len(out)} entries")
 
 
+def apply(path):
+    """Merge an id<TAB>EN file touching any ids (fix/polish passes), after checking those entries."""
+    out = {}
+    for line in Path(path).read_text(encoding="utf-8-sig").splitlines():
+        if line.strip():
+            mid, _, en = line.partition("\t")
+            out[mid] = en.strip()
+    entries = load()
+    terms = glossary()
+    errs = [err for e in entries if e["id"] in out for err in check_entry(e["id"], e["jp"], out[e["id"]], terms)]
+    if missing := set(out) - {e["id"] for e in entries}:
+        errs.append(f"unknown ids {sorted(missing)}")
+    if errs:
+        sys.exit("\n".join(errs))
+    for e in entries:
+        if e["id"] in out:
+            e["en"] = out[e["id"]]
+    save(entries)
+    print(f"applied {len(out)} entries")
+
+
 def pairs(name):
     es = load()
     idx = {e["id"]: i for i, e in enumerate(es)}
@@ -190,4 +211,5 @@ if __name__ == "__main__":
     cmd = sys.argv[1]
     if cmd == "lint":
         sys.exit(0 if lint() else 1)
-    {"split": split, "check": lambda n: sys.exit(0 if check(n) else 1), "merge": merge, "pairs": pairs}[cmd](sys.argv[2])
+    {"split": split, "check": lambda n: sys.exit(0 if check(n) else 1), "merge": merge, "pairs": pairs,
+     "apply": apply}[cmd](sys.argv[2])
