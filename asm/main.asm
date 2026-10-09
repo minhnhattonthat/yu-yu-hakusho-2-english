@@ -54,24 +54,13 @@ org $81CD4A
 org $81CD4F
     lda.w #!hud_block       ; source (was $88:98CF)
     ldx.w #!hud_block>>16
-org $81CF2E
-    dw 20                   ; P1: bytes per fighter (was 12)
+; name slots stay 6 tiles wide (P1 cols 4-9, P2 22-27): cols 10-13 / 18-21 hold the round-win markers
 org $81CF3B
     dw !hud_p1
-org $81CF45
-    dw $015C                ; P1 row 1: cols 4-13 (was 4-9)
 org $81CF4D
     dw !hud_p1
-org $81CF57
-    dw $019C                ; P1 row 2
-org $81CF63
-    dw 20                   ; P2: bytes per fighter
-org $81CF6B
-    dw $0164                ; P2 row 1 from col 18 (was 22)
 org $81CF70
     dw !hud_p2
-org $81CF7F
-    dw $01A4                ; P2 row 2 from col 18
 org $81CF82
     dw !hud_p2
 org !hud_p1

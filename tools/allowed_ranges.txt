@@ -9,15 +9,9 @@
 18E100-18FFFF      $B1 tail: text overflow
 1ADE80-1AEE7F      $B5 tail: HUD graphics block
 CD4A-CD54          $81:CD4A HUD block DMA size/source
-CF2E-CF2F          $81 HUD P1 stride
 CF3B-CF3C          $81 HUD P1 table
-CF45-CF46          $81 HUD P1 row 1 end
 CF4D-CF4E          $81 HUD P1 table (row 2)
-CF57-CF58          $81 HUD P1 row 2 end
-CF63-CF64          $81 HUD P2 stride
-CF6B-CF6C          $81 HUD P2 row 1 start
 CF70-CF71          $81 HUD P2 table
-CF7F-CF80          $81 HUD P2 row 2 start
 CF82-CF83          $81 HUD P2 table (row 2)
 FD00-FFFF          $81:FD00 HUD name tables
 F9E3-F9EE          $81 tally pointers

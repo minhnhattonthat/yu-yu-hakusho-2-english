@@ -15,7 +15,48 @@ import text  # noqa: E402
 
 ROOT = text.ROOT
 BLOCK, BLOCK_SIZE, NEW_SIZE = 0x418CF, 0x960, 0x1000
-WIDE = 10                      # tiles per name row (cols 4-13 for P1, 18-27 for P2)
+WIDE = 6                       # tiles per name row (P1 cols 4-9, P2 22-27; the round markers sit between)
+# names wider than 48 px: two lines of 5x7 capitals, one per tile row
+TWO_LINE = {"Shishiwakamaru": ("SHISHI-", "WAKAMARU"), "Masked Fighter": ("MASKED", "FIGHTER")}
+SMALL = {  # 7-row capitals, '#' = stroke (columns per row = glyph width)
+    "A": [".###.", "#...#", "#...#", "#####", "#...#", "#...#", "#...#"],
+    "C": [".####", "#....", "#....", "#....", "#....", "#....", ".####"],
+    "D": ["####.", "#...#", "#...#", "#...#", "#...#", "#...#", "####."],
+    "E": ["#####", "#....", "#....", "####.", "#....", "#....", "#####"],
+    "F": ["#####", "#....", "#....", "####.", "#....", "#....", "#...."],
+    "G": [".####", "#....", "#....", "#..##", "#...#", "#...#", ".####"],
+    "H": ["#...#", "#...#", "#...#", "#####", "#...#", "#...#", "#...#"],
+    "I": ["###", ".#.", ".#.", ".#.", ".#.", ".#.", "###"],
+    "K": ["#...#", "#..#.", "#.#..", "##...", "#.#..", "#..#.", "#...#"],
+    "M": ["#...#", "##.##", "#.#.#", "#.#.#", "#...#", "#...#", "#...#"],
+    "R": ["####.", "#...#", "#...#", "####.", "#.#..", "#..#.", "#...#"],
+    "S": [".####", "#....", "#....", ".###.", "....#", "....#", "####."],
+    "T": ["#####", "..#..", "..#..", "..#..", "..#..", "..#..", "..#.."],
+    "U": ["#...#", "#...#", "#...#", "#...#", "#...#", "#...#", ".###."],
+    "W": ["#...#", "#...#", "#...#", "#.#.#", "#.#.#", "##.##", "#...#"],
+    "-": ["....", "....", "....", "###.", "....", "....", "...."],
+}
+
+
+def render_small(lines):
+    """Two 8-px rows of small capitals (stroke 1, shadow 3), one line per tile row."""
+    px = [[0] * 64 for _ in range(16)]
+    width = 0
+    for row, line in enumerate(lines):
+        x = 0
+        for ch in line:
+            art = SMALL[ch]
+            for y, r in enumerate(art):
+                for xx, c in enumerate(r):
+                    if c == "#":
+                        px[row * 8 + y][x + xx] = font.STROKE
+            x += len(art[0]) + 1
+        width = max(width, x)
+    for y in range(15, -1, -1):                      # drop shadow right/down, within each 8-px row
+        for x in range(63, -1, -1):
+            if px[y][x] == 0 and ((x and px[y][x - 1] == font.STROKE) or (y % 8 and px[y - 1][x] == font.STROKE)):
+                px[y][x] = font.SHADOW
+    return px, width
 # fighter id -> name (ids from the original tables: 2 = Hiei, 3 = Kurama, 11 = masked fighter, 12 = young Genkai)
 NAMES = ["Yusuke", "Kuwabara", "Hiei", "Kurama", "Genkai", "Suzaku", "Chu", "Jin", "Shishiwakamaru", "Toguro",
          "Toguro", "Masked Fighter", "Genkai", "Toguro"]
@@ -58,7 +99,7 @@ def build(rom):
     p1, p2 = bytearray(), bytearray()
     for name in NAMES:
         if name not in placed:
-            px, w = render(name, glyphs, widths)
+            px, w = render_small(TWO_LINE[name]) if name in TWO_LINE else render(name, glyphs, widths)
             n = -(-(w - 1) // 8)              # the last column is the shadow/gap
             if n > WIDE:
                 raise SystemExit(f"HUD name {name!r} needs {n} tiles > {WIDE}")
