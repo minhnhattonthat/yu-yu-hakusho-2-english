@@ -1,0 +1,188 @@
+[
+ {
+  "id": "B00",
+  "off": "02B436",
+  "jp": "第一試合{end}",
+  "en": "Round 1"
+ },
+ {
+  "id": "B01",
+  "off": "02B440",
+  "jp": "第二試合{end}",
+  "en": "Round 2"
+ },
+ {
+  "id": "B02",
+  "off": "02B44A",
+  "jp": "最終試合{end}",
+  "en": "Final Round"
+ },
+ {
+  "id": "B03",
+  "off": "02B454",
+  "jp": "再試合{end}",
+  "en": "Rematch"
+ },
+ {
+  "id": "B04",
+  "off": "02B45C",
+  "jp": "　開始！{end}",
+  "en": "Begin!"
+ },
+ {
+  "id": "B05",
+  "off": "02B466",
+  "jp": "はじめ！{end}",
+  "en": "Fight!"
+ },
+ {
+  "id": "B06",
+  "off": "02B470",
+  "jp": "勝者なし{end}",
+  "en": "No Winner"
+ },
+ {
+  "id": "B07",
+  "off": "02B47A",
+  "jp": "ＰＡＵＳＥ{end}",
+  "en": "PAUSE"
+ },
+ {
+  "id": "B08",
+  "off": "02B486",
+  "jp": "勝者{end}",
+  "en": "Winner"
+ },
+ {
+  "id": "B09",
+  "off": "02B48C",
+  "jp": "浦　飯{end}",
+  "en": "Urameshi"
+ },
+ {
+  "id": "B0A",
+  "off": "02B494",
+  "jp": "桑　原{end}",
+  "en": "Kuwabara"
+ },
+ {
+  "id": "B0B",
+  "off": "02B49C",
+  "jp": "飛　影{end}",
+  "en": "Hiei"
+ },
+ {
+  "id": "B0C",
+  "off": "02B4A4",
+  "jp": "蔵　馬{end}",
+  "en": "Kurama"
+ },
+ {
+  "id": "B0D",
+  "off": "02B4AC",
+  "jp": "幻　海{end}",
+  "en": "Genkai"
+ },
+ {
+  "id": "B0E",
+  "off": "02B4C6",
+  "jp": "朱　雀{end}",
+  "en": "Suzaku"
+ },
+ {
+  "id": "B0F",
+  "off": "02B4CE",
+  "jp": "酎{end}",
+  "en": "Chu"
+ },
+ {
+  "id": "B10",
+  "off": "02B4D2",
+  "jp": "陣{end}",
+  "en": "Jin"
+ },
+ {
+  "id": "B11",
+  "off": "02B4D6",
+  "jp": "死々若丸{end}",
+  "en": "Shishiwakamaru"
+ },
+ {
+  "id": "B12",
+  "off": "02B4E0",
+  "jp": "戸愚呂{end}",
+  "en": "Toguro"
+ },
+ {
+  "id": "B13",
+  "off": "02B4E0",
+  "jp": "戸愚呂{end}",
+  "en": "Toguro"
+ },
+ {
+  "id": "B14",
+  "off": "02B4B4",
+  "jp": "覆　面{end}",
+  "en": "Masked Fighter"
+ },
+ {
+  "id": "B15",
+  "off": "02B4BC",
+  "jp": "少女幻海{end}",
+  "en": "Young Genkai"
+ },
+ {
+  "id": "B16",
+  "off": "02B4E0",
+  "jp": "戸愚呂{end}",
+  "en": "Toguro"
+ },
+ {
+  "id": "T00",
+  "off": "00F9F1",
+  "jp": "　　　　　　　　　{end}",
+  "en": ""
+ },
+ {
+  "id": "T01",
+  "off": "00FA05",
+  "jp": "体力　　　　　　０{end}",
+  "en": "Health | ０"
+ },
+ {
+  "id": "T02",
+  "off": "00FA19",
+  "jp": "霊力　　　　　　０{end}",
+  "en": "Spirit Energy | ０"
+ },
+ {
+  "id": "T03",
+  "off": "00FA2D",
+  "jp": "経験　　　　　　０{end}",
+  "en": "Experience | ０"
+ },
+ {
+  "id": "T04",
+  "off": "00FA41",
+  "jp": "総合　　　　　　０{end}",
+  "en": "Total | ０"
+ },
+ {
+  "id": "T05",
+  "off": "00FA55",
+  "jp": "ボ―ナス{end}",
+  "en": "Bonus"
+ },
+ {
+  "id": "P00",
+  "off": "0002EF",
+  "jp": "ＰＡＵＳＥ{end}",
+  "en": "PAUSE"
+ },
+ {
+  "id": "P01",
+  "off": "0002FB",
+  "jp": "　　　　　{end}",
+  "en": ""
+ }
+]

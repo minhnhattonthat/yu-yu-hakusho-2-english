@@ -17,7 +17,7 @@ import fit  # noqa: E402
 
 ROOT = Path(__file__).resolve().parent.parent
 TL = ROOT / "work" / "tl"
-FILES = [ROOT / "script" / "messages.json", ROOT / "script" / "substrings.json"]
+FILES = [ROOT / "script" / "messages.json", ROOT / "script" / "substrings.json", ROOT / "script" / "other.json"]
 
 
 def rng(a, b):
@@ -30,6 +30,7 @@ BATCHES = {
     "b02": rng(0x80, 0xAF),
     "b03": rng(0xB0, 0xF7) + rng(0x100, 0x101) + rng(0x103, 0x104),
     "special": ["M003", "M004", "M005", "M01E", "M01F"] + rng(0x64, 0x6F) + ["M0F8", "M0F9", "M102"],
+    "other": [f"B{i:02X}" for i in range(23)] + [f"T{i:02X}" for i in range(1, 6)] + ["P00"],
 }
 CTRL = re.compile(r"\{[^}]*\}")
 
@@ -44,7 +45,7 @@ def load():
 def save(entries):
     by_file = {f: [] for f in FILES}
     for e in entries:
-        by_file[FILES[0] if e["id"][0] == "M" else FILES[1]].append(e)
+        by_file[FILES[{"M": 0, "S": 1}.get(e["id"][0], 2)]].append(e)
     for f, es in by_file.items():
         f.write_text(json.dumps(es, ensure_ascii=False, indent=1) + "\n", encoding="utf-8", newline="\n")
 

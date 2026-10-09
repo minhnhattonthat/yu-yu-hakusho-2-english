@@ -81,6 +81,7 @@ GRIDS = {mid: MOVE_GRID for mid in ["M01E", "M01F"] + [f"M{i:03X}" for i in rang
 # 1|P|VS|2|COM: the menu tilemaps reuse runs ("2P" = cell 74 + the "P" of "1P", every item + the shared "Mode").
 GRIDS["M004"] = [5, 3, 4, 3, 6, 4, 7, 5, 4, 6, 5, 2, 2, 5, 4, 4, 1, 1, 2, 1, 3]
 GRIDS["M005"] = GRIDS["M004"][8:]
+GRIDS.update({f"T{i:02X}": [8, 1] for i in range(1, 5)})   # tally label | digit cell the game overwrites
 
 
 def layout_width(s):
@@ -167,13 +168,8 @@ def insert(rom, entries, table_off, alloc, mode, widths):
                 data = encode_en("".join(f"{k % 100}{{tab}}" for k in range(1, n + 1)))
             elif mode in ("marker", "cells"):
                 data = encode_en(marker(src, widths))
-            elif mode != "jp" and src.get("en") and src["id"] in GRIDS:
-                data = encode_en(grid_text(src["id"], src["en"]))
             elif mode != "jp" and src.get("en"):
-                wrapped, errs = fit.wrap(src["en"], src["id"])
-                if errs:
-                    raise SystemExit("\n".join(errs))
-                data = encode_en(wrapped)
+                data = encode_entry(src)
             else:
                 data = text.JP.encode(src["jp"])
             placed[src["id"]] = snes(alloc.put(rom, data))
@@ -181,6 +177,48 @@ def insert(rom, entries, table_off, alloc, mode, widths):
 
 
 entries_by_id = {}
+
+
+def encode_entry(e):
+    if e["id"] in GRIDS:
+        return encode_en(grid_text(e["id"], e["en"]))
+    wrapped, errs = fit.wrap(e["en"], e["id"])
+    if errs:
+        raise SystemExit("\n".join(errs))
+    return encode_en(wrapped)
+
+
+def insert_other(rom, entries, mode):
+    """Strings outside the story bank (text.AUX_TABLES / AUX_FIXED): translated ones move to their bank's tail."""
+    allocs = {pre: Allocator([free]) for pre, (_, _, _, free) in text.AUX_TABLES.items()}
+    for pre, (_, _, _, (a, b)) in text.AUX_TABLES.items():
+        rom[a:b] = b"\xff" * (b - a)
+    placed = {}
+    for e in entries:
+        if mode == "cells" and e["id"][0] in "BT":     # one letter per cell shows how many cells are on screen
+            e = dict(e, en="".join(f"{c}{{tab}}" for c in "ABCDEFGHIJ"))
+            data = encode_en(e["en"])
+        elif mode == "jp" or not e.get("en"):
+            continue
+        else:
+            data = encode_entry(e)
+        if e["id"] in text.AUX_FIXED:
+            off, size = text.AUX_FIXED[e["id"]]
+            if len(data) > size:
+                raise SystemExit(f"{e['id']}: {len(data)} bytes > {size}")
+            rom[off:off + size] = data.ljust(size, b"\0")
+            continue
+        pre, i = e["id"][0], int(e["id"][1:], 16)
+        table, _, bank, _ = text.AUX_TABLES[pre]
+        if (pre, data) not in placed:
+            placed[pre, data] = allocs[pre].put(rom, data)
+        rom[table + 2 * i:table + 2 * i + 2] = (placed[pre, data] - bank + 0x8000).to_bytes(2, "little")
+        if pre == "B" and mode != "cells":   # keep the label centred: shift its scroll offset by half the change
+            o = text.B_OFFSETS + 2 * i
+            old = int.from_bytes(rom[o:o + 2], "little", signed=True)
+            jp_w = layout_width(e["jp"].replace("{end}", ""))
+            new = old - (jp_w - layout_width(e["en"])) // 2
+            rom[o:o + 2] = new.to_bytes(2, "little", signed=True)
 
 
 def build(out, mode):
@@ -203,6 +241,7 @@ def build(out, mode):
     alloc = Allocator(FREE)
     insert(rom, msgs, MSG_TABLE, alloc, mode, wbin)
     insert(rom, subs, SUB_TABLE, alloc, mode, wbin)
+    insert_other(rom, json.loads((ROOT / "script" / "other.json").read_text(encoding="utf-8")), mode)
     out.write_bytes(rom)
     used = sum(r[0] - a for r, (a, _) in zip(alloc.regions, FREE))
     print(f"built {out} ({mode}), text {used} bytes")

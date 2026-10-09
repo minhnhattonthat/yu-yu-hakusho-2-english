@@ -37,10 +37,36 @@ def read_table(rom, table, count):
     return out
 
 
+# Strings outside the story bank, copied to $0400 and drawn by $80:D7CE. Same encoding.
+#   prefix: (16-bit pointer table offset, count, file offset of the table's bank, free tail (start, end))
+AUX_TABLES = {
+    "B": (0x2B408, 23, 0x28000, (0x2E9F1, 0x30000)),   # $85 battle labels + winner names; offsets at $85:B3DA
+    "T": (0xF9E3, 6, 0x8000, (0xFA85, 0x10000)),        # $81 story result tally (体力, 霊力, ...)
+}
+B_OFFSETS = 0x2B3DA                                     # $85: BG3 scroll offset per label (centres it)
+AUX_FIXED = {"P00": (0x2EF, 12), "P01": (0x2FB, 12)}    # $80 PAUSE / blank: fixed 12-byte MVN copies
+
+
+def aux_entries(rom):
+    out = []
+    for pre, (table, count, bank, _) in AUX_TABLES.items():
+        for i in range(count):
+            off = bank + word(rom, table + 2 * i) - 0x8000
+            out.append({"id": f"{pre}{i:02X}", "off": f"{off:06X}", "jp": JP.decode(rom, off)[0], "en": ""})
+    for mid, (off, size) in AUX_FIXED.items():
+        out.append({"id": mid, "off": f"{off:06X}", "jp": JP.decode(rom, off)[0], "en": ""})
+    return out
+
+
 def dump(force=False):
     rom = ROM.read_bytes()
     script = ROOT / "script"
     script.mkdir(exist_ok=True)
+    other = script / "other.json"           # not "aux.json": AUX is a reserved device name on Windows
+    if not other.exists() or force:
+        other.write_text(json.dumps(aux_entries(rom), ensure_ascii=False, indent=1) + "\n", encoding="utf-8",
+                         newline="\n")
+        print(f"wrote {other}")
     for name, table, count in (("messages", MSG_TABLE, MSG_COUNT), ("substrings", SUB_TABLE, SUB_COUNT)):
         path = script / f"{name}.json"
         if path.exists() and not force:
