@@ -1,0 +1,393 @@
+; Yu Yu Hakusho 2 English patch: text relocation + VWF. Assembled by tools/build.py (asar) onto a copy of the
+; original ROM. Design notes: docs/re/vwf.md.
+lorom
+
+; ---- addresses shared with tools/build.py (keep in sync) ----
+!msg_table   = $88AB77              ; 296 x 24-bit pointers (main messages)
+!sub_table   = $88AB77+(296*3)      ; 64 x 24-bit pointers (substrings)
+
+; ---- WRAM never written by the original (tools/lua/wramuse.lua) ----
+!vwf_px   = $0AF0           ; byte: pen pixel offset inside the pen cell (0-15)
+!vwf_col  = $0AF1           ; $0B00/$0B01 after the last glyph: a mismatch means the pen was moved
+!vwf_row  = $0AF2
+!cell     = $09B0           ; word: linear cell index of the pen
+!tbase    = $09B2           ; word: mirror offset of the pen's 8-px tile column (top tile)
+!dmalo    = $09B4           ; word: first mirror byte touched by this call
+!dmahi    = $09B6           ; word: end of the mirror bytes touched
+!w        = $09B8           ; byte: glyph width
+!cnt      = $09B9           ; byte: loop counter
+!sub      = $09BA           ; word (high byte 0): pen pixel offset inside its 8-px tile
+!mul      = $09BC           ; byte: 1 << (8 - sub)
+!side     = $09BD           ; byte: pen in the right tile column of its cell
+!code     = $09BE           ; word
+; asar sizes immediates by how they are written, not by the M/X flags: use $xx in 8-bit code, $xxxx in 16-bit.
+
+!mirror   = $8000           ; $7E8000: WRAM mirror of the 64 text cells at VRAM $6000 (64 bytes per cell:
+                            ; TL, TR, BL, BR 2bpp tiles); the original clear routine already zeroes it
+
+; ---- hooks ----
+org $80D966                 ; main stream pointer lookup (after JSR $DA4B; M8 X16, DB=$80)
+    jml main_ptr
+
+org $80D8BA                 ; substring stream pointer lookup (same state)
+    jml sub_ptr
+
+org $80DAAE                 ; glyph draw (A16 X16, A = code >= $0100), replaces JSR $DB3A + col/DMA bookkeeping
+    jsl vwf_glyph
+    plp
+    rts
+
+org $80D88A                 ; box clear: was STZ $0B00 : STZ $0B01 (M8)
+    jsl vwf_clear
+    nop #2
+
+org $A0E100                 ; bank $A0 free tail (0xFF fill)
+main_ptr:
+    rep #$30
+    lda $0B07
+    asl
+    clc
+    adc $0B07
+    tax
+    sep #$20
+    lda.l !msg_table+2,x
+    pha
+    plb
+    rep #$20
+    lda.l !msg_table,x
+    clc
+    adc $0B09
+    tay
+    jml $80D979
+
+sub_ptr:
+    rep #$30
+    lda $0B0E
+    asl
+    clc
+    adc $0B0E
+    tax
+    sep #$20
+    lda.l !sub_table+2,x
+    pha
+    plb
+    rep #$20
+    lda.l !sub_table,x
+    clc
+    adc $0B10
+    tay
+    jml $80D979
+
+vwf_clear:                  ; M8 (DB is a WRAM-mirroring bank here)
+    stz $0B00
+    stz $0B01
+    lda #$00
+    sta.l $7E0000+!vwf_px
+    rtl
+
+; vwf_glyph: draw one code at ($0B00,$0B01) into the mirror and queue the upload. A16 X16 on entry.
+;   $0300        tab: move the pen to the next cell boundary
+;   $0320-$037E  one ASCII char (code & $7F)
+;   >= $2020     two ASCII chars, low byte first
+;   else         Japanese 16x16 glyph from the WRAM font (cell aligned)
+vwf_glyph:
+    phb
+    sta.l $7E0000+!code
+    sep #$20
+    lda #$7E
+    pha
+    plb
+    lda $0B00
+    cmp !vwf_col
+    bne .moved
+    lda $0B01
+    cmp !vwf_row
+    beq .same
+.moved:
+    stz !vwf_px
+.same:
+    rep #$30
+    jsr calc_cell
+    lda !cell
+    asl #6
+    sta !dmalo
+    sta !dmahi
+    lda !code
+    cmp #$2020
+    bcs .pair
+    cmp #$0320
+    bcs .single
+    cmp #$0300
+    beq .tab
+    jsr draw_jp
+    bra .done
+.tab:
+    jsr align
+    bra .done
+.pair:
+    and #$00FF
+    jsr draw_ascii
+    lda !code
+    xba
+    and #$00FF
+    jsr draw_ascii
+    bra .done
+.single:
+    and #$007F
+    jsr draw_ascii
+.done:
+    sep #$20
+    lda $0B00
+    sta !vwf_col
+    lda $0B01
+    sta !vwf_row
+    rep #$20
+    jsr queue_dma
+    plb
+    rtl
+
+; !cell = $0B01 * 11 + $0B00 (A16)
+calc_cell:
+    lda $0B01
+    and #$00FF
+    sta !cell
+    asl
+    clc
+    adc !cell               ; 3r
+    sta !tbase
+    lda !cell
+    asl #3                  ; 8r
+    clc
+    adc !tbase
+    sta !cell               ; 11r
+    lda $0B00
+    and #$00FF
+    clc
+    adc !cell
+    sta !cell
+    rts
+
+; pen to the next cell boundary (A16 in/out)
+align:
+    sep #$20
+    lda !vwf_px
+    beq +
+    stz !vwf_px
+    inc $0B00
++   rep #$20
+    jmp calc_cell
+
+; Japanese glyph: align, copy 64 bytes from $7F0000 + (code-$100)*64 to the pen cell, advance one cell.
+draw_jp:
+    jsr align
+    lda !code
+    sec
+    sbc #$0100
+    asl #6
+    tax
+    lda !cell
+    asl #6
+    tay
+    sep #$20
+    lda #$40
+    sta !cnt
+-   lda.l $7F0000,x
+    sta !mirror,y
+    inx
+    iny
+    dec !cnt
+    bne -
+    inc $0B00
+    rep #$20
+    tya
+    sta !dmahi
+    rts
+
+; zero the 64-byte mirror cell at mirror offset A (A16 X16)
+clear_cell:
+    tay
+    ldx #$0020
+-   lda #$0000
+    sta !mirror,y
+    iny
+    iny
+    dex
+    bne -
+    rts
+
+; draw ASCII char A at the pen (A16 X16, DB=$7E)
+draw_ascii:
+    sec
+    sbc #$0020
+    bcs +
+    rts
++   cmp #$0060
+    bcc +
+    rts
++   pha                     ; glyph index
+    ; touched range ends 2 cells after the pen cell (pen cell + possible spill), clamped to the mirror
+    lda !cell
+    inc
+    inc
+    asl #6
+    cmp #$1000
+    bcc +
+    lda #$1000
++   cmp !dmahi
+    bcc +
+    sta !dmahi
++   ; pen tile column
+    lda !cell
+    asl #6
+    sta !tbase
+    sep #$20
+    lda !vwf_px
+    bne +
+    rep #$20
+    lda !tbase              ; pen at a cell boundary: the cell is fresh
+    jsr clear_cell
+    sep #$20
+    lda !vwf_px
++   and #$08
+    sta !side
+    beq +
+    rep #$20
+    lda !tbase
+    clc
+    adc #$0010
+    sta !tbase
+    sep #$20
++   rep #$20
+    lda !vwf_px
+    and #$0007
+    sta !sub
+    tax
+    sep #$20
+    lda.l mul_table,x
+    sta !mul
+    plx                     ; glyph index (X16)
+    phx
+    lda.l font_widths,x
+    sta !w
+    ; right column and sub + w > 8: the glyph spills into the next cell, which is fresh
+    lda !side
+    beq +
+    lda !sub
+    clc
+    adc !w
+    cmp #$09
+    bcc +
+    rep #$20
+    lda !tbase
+    clc
+    adc #$0030
+    jsr clear_cell
+    sep #$20
++   rep #$20
+    pla                     ; glyph index
+    asl #5
+    tax                     ; font offset
+    ldy !tbase
+    sep #$20
+    lda #$20
+    sta !cnt
+.byte:
+    lda.l font_data,x
+    beq .next
+    xba
+    lda !sub
+    beq .plain
+    xba
+    sta.l $004202
+    lda !mul
+    sta.l $004203
+    nop #4                  ; 8-cycle multiply latency
+    lda.l $004217           ; b >> sub
+    ora !mirror,y
+    sta !mirror,y
+    lda !side
+    bne .right
+    lda.l $004216           ; bits shifted out -> right column of the same cell
+    ora !mirror+16,y
+    sta !mirror+16,y
+    bra .next
+.right:
+    lda.l $004216           ; -> left column of the next cell
+    ora !mirror+48,y
+    sta !mirror+48,y
+    bra .next
+.plain:
+    xba
+    ora !mirror,y
+    sta !mirror,y
+.next:
+    inx
+    iny
+    dec !cnt
+    beq .advance
+    lda !cnt
+    cmp #$10
+    bne .byte
+    rep #$20                ; rows 8-15: bottom tiles are 32 bytes on (16 already stepped)
+    tya
+    clc
+    adc #$0010
+    tay
+    sep #$20
+    bra .byte
+.advance:
+    lda !vwf_px
+    clc
+    adc !w
+    cmp #$10
+    bcc +
+    sbc #$10
+    inc $0B00
+    rep #$20
+    inc !cell
+    sep #$20
++   sta !vwf_px
+.ret:
+    rep #$30
+    rts
+
+; queue mirror bytes [dmalo, dmahi) for the NMI upload ($80:8C17: VRAM $B5 + $B9/2 <- $7E8000 + $B9, up to $B7)
+queue_dma:
+    lda !dmahi
+    cmp !dmalo
+    beq .ret
+    sep #$20
+    lda $B3
+    rep #$20
+    and #$0001
+    bne .merge
+    lda !dmalo
+    sta $B9
+    lda !dmahi
+    sta $B7
+    bra .go
+.merge:
+    lda !dmalo
+    cmp $B9
+    bcs +
+    sta $B9
++   lda !dmahi
+    cmp $B7
+    bcc .go
+    sta $B7
+.go:
+    lda #$6000
+    sta $B5
+    lda #$0001
+    tsb $B3
+.ret:
+    rts
+
+mul_table:                  ; 1 << (8 - sub), sub = 1..7 (entry 0 unused)
+    db $00, $80, $40, $20, $10, $08, $04, $02
+font_widths:
+    incbin "../build/font_w.bin"
+font_data:
+    incbin "../build/font_en.bin"
+end_of_code:
+assert end_of_code <= $A0FFFF, "VWF code overflows bank $A0"

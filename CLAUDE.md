@@ -3,6 +3,7 @@
 Skill: translate-retro-game (H:/translation/.claude/skills/translate-retro-game/SKILL.md). Read it before ROM, text or QA work.
 
 ## Commands (run from repo root; always `python -X utf8`)
+- Build:    `python -X utf8 tools/build.py [--marker] [--out build/yyh2_en.sfc]` (font -> asar asm/main.asm -> text insert)
 - Dump:     `python -X utf8 tools/text.py dump [--force]` -> script/messages.json, script/substrings.json (never clobbers without --force)
 - Check:    `python -X utf8 tools/check.py` (pytest tests/; the pre-commit hook runs this)
 - Smoke:    `python -X utf8 H:/translation/.claude/skills/translate-retro-game/scripts/emu.py ROM --out work/qa/smoke --frames 1800 --smoke`
@@ -12,7 +13,7 @@ Skill: translate-retro-game (H:/translation/.claude/skills/translate-retro-game/
 ## Paths
 - ROM: `rom/Yu Yu Hakusho 2 - Kakutou no Shou (Japan).sfc` (gitignored). Mesen2: tools/mesen2/Mesen.exe, asar: tools/asar/asar.exe.
 - Text: script/*.json (id, off, jp, en, same_as). Table: tbl/jp.tbl. Glossary + rulings: glossary.md. Lua hooks: tools/lua/.
-- RE notes: docs/re/text-engine.md (encoding, tables, renderer, menus).
+- RE notes: docs/re/text-engine.md (encoding, tables, renderer, menus), docs/re/vwf.md (relocation, English encoding, VWF).
 
 ## Rulings
 - Official EN names (Viz/Funimation), Western order, no honorifics. Credits in English. No abbreviations. Specs/plans pre-approved.
