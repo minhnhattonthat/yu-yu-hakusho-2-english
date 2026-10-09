@@ -33,6 +33,7 @@ BATCHES = {
     "subs": [f"S{i:03X}" for i in range(64)],
     "credits": ["M0FA", "M0FB"] + rng(0x11C, 0x127),
     "other": [f"B{i:02X}" for i in range(23)] + [f"T{i:02X}" for i in range(1, 6)] + ["P00"],
+    "inline": ["I00", "I01", "I02", "I03", "I04", "I05"],
 }
 CTRL = re.compile(r"\{[^}]*\}")
 
@@ -80,12 +81,13 @@ def norm(s):
 
 def check_entry(mid, jp, en, terms):
     errs = []
-    if any(ord(c) > 0x7E or ord(c) < 0x20 for c in en if c not in "↓↘→↙←↑　０"):
+    if any(ord(c) > 0x7E or ord(c) < 0x20 for c in en if c not in "↓↘→↙←↑　０％"):   # layout glyphs kept
         errs.append(f"{mid}: non-ASCII/control character")
     if "\\u" in en or "\t" in en:
         errs.append(f"{mid}: escape or tab")
-    a = Counter(c for c in CTRL.findall(jp) if c not in ("{n}", "{end}"))
-    b = Counter(c for c in CTRL.findall(en) if c not in ("{n}", "{end}"))
+    layout = ("{n}", "{end}", "{tab}", "{num}")      # line/cell layout, not content
+    a = Counter(c for c in CTRL.findall(jp) if c not in layout)
+    b = Counter(c for c in CTRL.findall(en) if c not in layout)
     if a != b:
         errs.append(f"{mid}: control codes differ: jp {dict(a)} en {dict(b)}")
     if re.search(r"\{(name|var|sub)\w*\}(st|nd|rd|th)\b", en):

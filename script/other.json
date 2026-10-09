@@ -184,5 +184,41 @@
   "off": "0002FB",
   "jp": "　　　　　{end}",
   "en": ""
+ },
+ {
+  "id": "I00",
+  "off": "00CE1F",
+  "jp": "終了はセレクトボタン{end}",
+  "en": "Press SELECT to quit"
+ },
+ {
+  "id": "I01",
+  "off": "007C3C",
+  "jp": "ステレオ{end}",
+  "en": "Stereo"
+ },
+ {
+  "id": "I02",
+  "off": "007C46",
+  "jp": "モノラル{end}",
+  "en": "Mono"
+ },
+ {
+  "id": "I03",
+  "off": "17C2E1",
+  "jp": "粉砕力　　　　　　％{end}",
+  "en": "Smash Power{tab}　　{num}％"
+ },
+ {
+  "id": "I04",
+  "off": "17C333",
+  "jp": "ボ―ナス　　　　００{end}",
+  "en": "Bonus{tab}　　{num}００"
+ },
+ {
+  "id": "I05",
+  "off": "17C385",
+  "jp": "総合　　　　　　００{end}",
+  "en": "Total{tab}　　{num}００"
  }
 ]

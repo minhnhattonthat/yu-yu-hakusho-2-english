@@ -15,6 +15,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).parent))
 import fit  # noqa: E402
 import font  # noqa: E402
+import hud  # noqa: E402
 import text  # noqa: E402
 
 ROOT = text.ROOT
@@ -24,9 +25,8 @@ SUB_TABLE = MSG_TABLE + text.MSG_COUNT * 3
 # Free space in banks $80-$BF (text banks must mirror low WRAM): (start, end) file offsets.
 FREE = [
     (SUB_TABLE + text.SUB_COUNT * 3, text.TEXT_END),   # old JP text in $88
-    (0x17DB30, 0x180000),                              # $AF tail
-    (0x1ADE80, 0x1B0000),                              # $B5 tail
-    (0x18E100, 0x190000),                              # $B1 tail
+    (0x17DB30, text.AUX_MOVED_FREE[0]),                # $AF tail (its last 256 bytes hold text.AUX_MOVED)
+    (0x18E100, 0x190000),                              # $B1 tail ($B5 tail holds the HUD block, asm/main.asm)
 ]
 TOKEN = re.compile(r"(\{[^}]*\})")
 CTRL = {"end": 0x0000, "n": 0x000A, "clr": 0x00FE, "wait": 0x00FF, "tab": 0x0300,
@@ -202,7 +202,21 @@ def insert_other(rom, entries, mode):
     for pre, (_, _, _, (a, b)) in text.AUX_TABLES.items():
         rom[a:b] = b"\xff" * (b - a)
     placed = {}
+    moved = Allocator([text.AUX_MOVED_FREE])
+    a, b = text.AUX_MOVED_FREE
+    rom[a:b] = b"\xff" * (b - a)
     for e in entries:
+        if e["id"] in text.AUX_MOVED:
+            if mode == "jp" or not e.get("en"):
+                continue
+            _, ptr_op, x_op, ndig = text.AUX_MOVED[e["id"]]
+            head, _, tail = e["en"].partition("{num}")
+            head_b = encode_en(head)[:-2]                 # drop the terminator
+            data = head_b + text.JP.encode("　" * ndig) + encode_en(tail)
+            off = moved.put(rom, data)
+            rom[ptr_op:ptr_op + 2] = (0x8000 | off & 0x7FFF).to_bytes(2, "little")
+            rom[x_op:x_op + 2] = len(head_b).to_bytes(2, "little")   # byte offset of the first digit word
+            continue
         if mode == "cells" and e["id"][0] in "BT":     # one letter per cell shows how many cells are on screen
             e = dict(e, en="".join(f"{c}{{tab}}" for c in "ABCDEFGHIJ"))
             data = encode_en(e["en"])
@@ -234,6 +248,8 @@ def build(out, mode):
     fbin, wbin, _ = font.build()
     (ROOT / "build" / "font_en.bin").write_bytes(fbin)
     (ROOT / "build" / "font_w.bin").write_bytes(wbin)
+    for name, data in zip(("hud_block", "hud_p1", "hud_p2"), hud.build(text.ROM.read_bytes())):
+        (ROOT / "build" / f"{name}.bin").write_bytes(data)
     shutil.copyfile(text.ROM, out)
     r = subprocess.run([str(ASAR), "--no-title-check", "--fix-checksum=off", str(ROOT / "asm" / "main.asm"), str(out)],
                        capture_output=True, text=True)

@@ -45,6 +45,42 @@ org $80D88A                 ; box clear: was STZ $0B00 : STZ $0B01 (M8)
     jsl vwf_clear
     nop #2
 
+; ---- fight HUD names (tools/hud.py, docs/re/hud.md) ----
+!hud_block = $B5DE80        ; English HUD graphics block (0x1000 bytes -> VRAM $7000-$77FF)
+!hud_p1    = $81FD00        ; 14 fighters x 2 rows x 10 tile bytes, left-aligned
+!hud_p2    = $81FE18        ; same, right-aligned
+org $81CD4A
+    lda.w #$1000            ; block size (was $0960)
+org $81CD4F
+    lda.w #!hud_block       ; source (was $88:98CF)
+    ldx.w #!hud_block>>16
+org $81CF2E
+    dw 20                   ; P1: bytes per fighter (was 12)
+org $81CF3B
+    dw !hud_p1
+org $81CF45
+    dw $015C                ; P1 row 1: cols 4-13 (was 4-9)
+org $81CF4D
+    dw !hud_p1
+org $81CF57
+    dw $019C                ; P1 row 2
+org $81CF63
+    dw 20                   ; P2: bytes per fighter
+org $81CF6B
+    dw $0164                ; P2 row 1 from col 18 (was 22)
+org $81CF70
+    dw !hud_p2
+org $81CF7F
+    dw $01A4                ; P2 row 2 from col 18
+org $81CF82
+    dw !hud_p2
+org !hud_p1
+    incbin "../build/hud_p1.bin"
+org !hud_p2
+    incbin "../build/hud_p2.bin"
+org !hud_block
+    incbin "../build/hud_block.bin"
+
 org $A0E100                 ; bank $A0 free tail (0xFF fill)
 main_ptr:
     rep #$30

@@ -41,10 +41,18 @@ def read_table(rom, table, count):
 #   prefix: (16-bit pointer table offset, count, file offset of the table's bank, free tail (start, end))
 AUX_TABLES = {
     "B": (0x2B408, 23, 0x28000, (0x2E9F1, 0x30000)),   # $85 battle labels + winner names; offsets at $85:B3DA
-    "T": (0xF9E3, 6, 0x8000, (0xFA85, 0x10000)),        # $81 story result tally (体力, 霊力, ...)
+    "T": (0xF9E3, 6, 0x8000, (0xFA85, 0xFD00)),         # $81 story result tally (体力, 霊力, ...); $81:FD00+ = HUD tables
 }
 B_OFFSETS = 0x2B3DA                                     # $85: BG3 scroll offset per label (centres it)
-AUX_FIXED = {"P00": (0x2EF, 12), "P01": (0x2FB, 12)}    # $80 PAUSE / blank: fixed 12-byte MVN copies
+AUX_FIXED = {"P00": (0x2EF, 12), "P01": (0x2FB, 12),   # $80 PAUSE / blank: fixed 12-byte MVN copies
+             "I00": (0xCE1F, 22),                       # $81 training "終了は セレクトボタン" (inline in code)
+             "I01": (0x7C3C, 10), "I02": (0x7C46, 10)}  # $80 sound mode ステレオ / モノラル (table $80:FC38)
+# Punching mini-game result labels, inline in $AF code: relocated by the build. (string, LDA src,y operand,
+# LDX #digit-offset operand, digit words). English marks the digits with {num}.
+AUX_MOVED = {"I03": (0x17C2E1, 0x17C2C2, 0x17C2D3, 3),   # 粉砕力 ... ％
+             "I04": (0x17C333, 0x17C30A, 0x17C318, 4),   # ボ―ナス ... ００
+             "I05": (0x17C385, 0x17C35C, 0x17C36A, 4)}   # 総合 ... ００
+AUX_MOVED_FREE = (0x17FF00, 0x180000)                   # end of the $AF tail, kept out of build.FREE
 
 
 def aux_entries(rom):
@@ -55,6 +63,8 @@ def aux_entries(rom):
             out.append({"id": f"{pre}{i:02X}", "off": f"{off:06X}", "jp": JP.decode(rom, off)[0], "en": ""})
     for mid, (off, size) in AUX_FIXED.items():
         out.append({"id": mid, "off": f"{off:06X}", "jp": JP.decode(rom, off)[0], "en": ""})
+    for mid, (off, *_) in AUX_MOVED.items():
+        out.append({"id": mid, "off": f"{off:06X}", "jp": JP.decode(rom, off)[0], "en": ""})
     return out
 
 
@@ -63,9 +73,11 @@ def dump(force=False):
     script = ROOT / "script"
     script.mkdir(exist_ok=True)
     other = script / "other.json"           # not "aux.json": AUX is a reserved device name on Windows
-    if not other.exists() or force:
-        other.write_text(json.dumps(aux_entries(rom), ensure_ascii=False, indent=1) + "\n", encoding="utf-8",
-                         newline="\n")
+    have = {} if force or not other.exists() else {e["id"]: e for e in json.loads(other.read_text(encoding="utf-8"))}
+    fresh = aux_entries(rom)
+    if len(have) < len(fresh):              # add new ids, keep existing English
+        other.write_text(json.dumps([have.get(e["id"], e) for e in fresh], ensure_ascii=False, indent=1) + "\n",
+                         encoding="utf-8", newline="\n")
         print(f"wrote {other}")
     for name, table, count in (("messages", MSG_TABLE, MSG_COUNT), ("substrings", SUB_TABLE, SUB_COUNT)):
         path = script / f"{name}.json"

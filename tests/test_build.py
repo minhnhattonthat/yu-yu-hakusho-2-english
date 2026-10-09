@@ -9,9 +9,8 @@ import text  # noqa: E402
 ROOT = text.ROOT
 ORIG = text.ROM.read_bytes()
 ROMDIFF = "H:/translation/.claude/skills/translate-retro-game/scripts/romdiff.py"
-# Code hooks in bank $80 + VWF code in $A0 + text tables/free space (asm/main.asm, build.FREE)
-ALLOWED = ["5966-5969", "58BA-58BD", "5AAE-5AB3", "588A-588F", "106100-107FFF",
-           f"{build.MSG_TABLE:X}-{build.FREE[0][0] - 1:X}"] + [f"{a:X}-{b - 1:X}" for a, b in build.FREE]
+ALLOWED = [line.split()[0] for line in (ROOT / "tools" / "allowed_ranges.txt").read_text().splitlines()
+           if line.strip() and not line.startswith("#")]
 
 
 def read_ptr(rom, off):
@@ -33,6 +32,13 @@ def test_relocated_japanese_decodes_like_original(tmp_path):
 
 def test_marker_build_assembles(tmp_path):
     build.build(tmp_path / "marker.sfc", "marker")
+
+
+def test_english_build_writes_only_allowed_ranges(tmp_path):
+    out = tmp_path / "en.sfc"
+    build.build(out, "en")
+    r = subprocess.run([sys.executable, ROMDIFF, str(text.ROM), str(out)] + ALLOWED, capture_output=True, text=True)
+    assert r.returncode == 0, r.stdout + r.stderr
 
 
 def test_encode_en_packs_pairs():

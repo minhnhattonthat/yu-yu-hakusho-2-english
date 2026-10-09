@@ -1,0 +1,35 @@
+# File-offset ranges the English build may change (romdiff.py). One inclusive range per line.
+5966-5969          $80:D966 main-stream pointer hook
+58BA-58BD          $80:D8BA substring pointer hook
+5AAE-5AB3          $80:DAAE glyph draw hook
+588A-588F          $80:D88A box clear hook
+106100-107FFF      $A0:E100 VWF code + font
+42B77-475BA        $88 new pointer tables + old JP text area (build.FREE)
+17DB30-17FFFF      $AF tail: text overflow + mini-game labels (text.AUX_MOVED)
+18E100-18FFFF      $B1 tail: text overflow
+1ADE80-1AEE7F      $B5 tail: HUD graphics block
+CD4A-CD54          $81:CD4A HUD block DMA size/source
+CF2E-CF2F          $81 HUD P1 stride
+CF3B-CF3C          $81 HUD P1 table
+CF45-CF46          $81 HUD P1 row 1 end
+CF4D-CF4E          $81 HUD P1 table (row 2)
+CF57-CF58          $81 HUD P1 row 2 end
+CF63-CF64          $81 HUD P2 stride
+CF6B-CF6C          $81 HUD P2 row 1 start
+CF70-CF71          $81 HUD P2 table
+CF7F-CF80          $81 HUD P2 row 2 start
+CF82-CF83          $81 HUD P2 table (row 2)
+FD00-FFFF          $81:FD00 HUD name tables
+F9E3-F9EE          $81 tally pointers
+FA85-FCFF          $81 tail: tally strings
+CE1F-CE34          $81 training banner (inline)
+2EF-306            $80 PAUSE (inline)
+7C3C-7C4F          $80 Stereo / Mono (inline)
+2B3DA-2B435        $85 battle label offsets + pointers
+2E9F1-2FFFF        $85 tail: battle labels
+17C2C2-17C2C3      $AF mini-game label pointer
+17C2D3-17C2D4      $AF mini-game digit offset
+17C30A-17C30B      $AF mini-game label pointer
+17C318-17C319      $AF mini-game digit offset
+17C35C-17C35D      $AF mini-game label pointer
+17C36A-17C36B      $AF mini-game digit offset
