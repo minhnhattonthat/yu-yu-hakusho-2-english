@@ -1,0 +1,10 @@
+rom/
+build/
+work/
+dist/
+release/
+tools/asar/
+tools/mesen2/
+tools/wla_dx_v10.6_Win64/
+*.mss
+__pycache__/
