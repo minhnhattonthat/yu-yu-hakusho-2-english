@@ -16,6 +16,7 @@ sys.path.insert(0, str(Path(__file__).parent))
 import fit  # noqa: E402
 import font  # noqa: E402
 import hud  # noqa: E402
+import options  # noqa: E402
 import text  # noqa: E402
 
 ROOT = text.ROOT
@@ -26,8 +27,7 @@ SUB_TABLE = MSG_TABLE + text.MSG_COUNT * 3
 FREE = [
     (SUB_TABLE + text.SUB_COUNT * 3, text.TEXT_END),   # old JP text in $88
     (0x17DB30, text.AUX_MOVED_FREE[0]),                # $AF tail (its last 256 bytes hold text.AUX_MOVED)
-    (0x18E100, 0x190000),                              # $B1 tail ($B5 tail holds the HUD block, asm/main.asm)
-]
+]   # $B1 / $B5 tails hold the options screen and HUD graphics (asm/main.asm)
 TOKEN = re.compile(r"(\{[^}]*\})")
 CTRL = {"end": 0x0000, "n": 0x000A, "clr": 0x00FE, "wait": 0x00FF, "tab": 0x0300,
         "var0": 0xF6, "var1": 0xF7, "var2": 0xF8, "var3": 0xF9,
@@ -249,6 +249,8 @@ def build(out, mode):
     (ROOT / "build" / "font_en.bin").write_bytes(fbin)
     (ROOT / "build" / "font_w.bin").write_bytes(wbin)
     for name, data in zip(("hud_block", "hud_p1", "hud_p2"), hud.build(text.ROM.read_bytes())):
+        (ROOT / "build" / f"{name}.bin").write_bytes(data)
+    for name, data in zip(("opt_chr", "opt_map", "opt_ptrs", "opt_lists"), options.build(text.ROM.read_bytes())):
         (ROOT / "build" / f"{name}.bin").write_bytes(data)
     shutil.copyfile(text.ROM, out)
     r = subprocess.run([str(ASAR), "--no-title-check", "--fix-checksum=off", str(ROOT / "asm" / "main.asm"), str(out)],

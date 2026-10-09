@@ -33,3 +33,8 @@ CE1F-CE34          $81 training banner (inline)
 17C318-17C319      $AF mini-game digit offset
 17C35C-17C35D      $AF mini-game label pointer
 17C36A-17C36B      $AF mini-game digit offset
+DCDF-DCE8          $81 options font load (raw)
+DCEA-DCEB          $81 options font DMA size
+DD4A-DD53          $81 options map load (raw)
+E12E-E149          $81 options label pointers
+1AEE80-1AF67F      $B5 options BG3 map

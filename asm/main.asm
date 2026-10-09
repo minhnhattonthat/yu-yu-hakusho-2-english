@@ -81,6 +81,26 @@ org !hud_p2
 org !hud_block
     incbin "../build/hud_block.bin"
 
+; ---- options screen (tools/options.py, docs/re/options.md): raw BG3 font + map instead of LZ data ----
+!opt_chr = $B1E100          ; 96 cells, 0x1800 bytes
+!opt_map = $B5EE80          ; 0x800 bytes
+org $81DCDF                 ; was LDA #$DC0D : LDX #$00B2 : JSL $818CF3 (M16 X16)
+    jsl load_opt_chr
+    nop #6
+org $81DCEA
+    dw $1800                ; DMA size (was $0ED0)
+org $81DD4A                 ; was LDA #$E732 : LDX #$00B2 : JSL $818C35
+    jsl load_opt_map
+    nop #6
+org $81E12E
+    incbin "../build/opt_ptrs.bin"
+org $81FF30
+    incbin "../build/opt_lists.bin"
+org !opt_chr
+    incbin "../build/opt_chr.bin"
+org !opt_map
+    incbin "../build/opt_map.bin"
+
 org $A0E100                 ; bank $A0 free tail (0xFF fill)
 main_ptr:
     rep #$30
@@ -117,6 +137,24 @@ sub_ptr:
     adc $0B10
     tay
     jml $80D979
+
+load_opt_chr:               ; M16 X16: options BG3 font -> $7E8000 (where the LZ decoder would have put it)
+    phb
+    ldx.w #!opt_chr
+    ldy.w #$8000
+    lda.w #$17FF
+    mvn $7E,!opt_chr>>16
+    plb
+    rtl
+
+load_opt_map:
+    phb
+    ldx.w #!opt_map
+    ldy.w #$8000
+    lda.w #$07FF
+    mvn $7E,!opt_map>>16
+    plb
+    rtl
 
 vwf_clear:                  ; M8 (DB is a WRAM-mirroring bank here): reset position, pen and mirror
     stz $0B00
