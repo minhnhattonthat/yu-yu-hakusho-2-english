@@ -13,7 +13,7 @@ Skill: translate-retro-game (H:/translation/.claude/skills/translate-retro-game/
 ## Paths
 - ROM: `rom/Yu Yu Hakusho 2 - Kakutou no Shou (Japan).sfc` (gitignored). Mesen2: tools/mesen2, asar: tools/asar.
 - Text: script/messages.json (M = $88 message table), substrings.json (S), other.json (B = $85 battle labels, T = $81 tally, P = $80 PAUSE). Tables: tbl/jp.tbl, tbl/credits.tbl (credits font swap $208-$2FF). Glossary + rulings: glossary.md. Briefs: docs/translator-brief.md, reviewer-brief.md, style-reference.md.
-- RE notes: docs/re/text-engine.md, docs/re/vwf.md, docs/re/menus.md (cell grids).
+- RE notes: docs/re/text-engine.md, vwf.md, menus.md (cell grids), graphics.md (LZ, HUD names, options screen). Allowed ROM writes: tools/allowed_ranges.txt.
 
 ## Rulings
 - Official EN names (Funimation dub), Western order, no honorifics (also in staff credits). Credits in English. No abbreviations (flagged exception: tally "EXP", 3-cell label). Specs/plans pre-approved.
@@ -21,5 +21,6 @@ Skill: translate-retro-game (H:/translation/.claude/skills/translate-retro-game/
 
 ## Status
 - Done: VWF + relocation, all script text translated (b01-b03 + menus, move lists, battle labels, substrings, credits), astra review b01, self-review b02/b03, story autoplay tour + credits checked in-game.
-- Next: graphics text (fight HUD names, attract-mode name kanji, option screen, title copyright), M0F8/M0F9 hints (layout unknown), M000 (probably unused), sampled whole-project review, release (BPS + README).
+- Also done: HUD names, options screen, inline strings (training banner, stereo/mono, mini-game), hint screen. Release: `python -X utf8 tools/release.py --version 1.0` -> release/ (zip = BPS + README).
+- Next: attract-mode intro names (docs/re/graphics.md), M000 (probably unused), sampled whole-project review.
 - Known issues: staff roll "Ma Ma"/"E ri ri n" spacing (original tilemap reuses cells); credit "Nitta" lacks the one-cell given name 石.
