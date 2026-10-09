@@ -3,157 +3,157 @@
   "id": "S000",
   "off": "04656D",
   "jp": "浦飯幽助{end}",
-  "en": ""
+  "en": "Yusuke Urameshi"
  },
  {
   "id": "S001",
   "off": "046577",
   "jp": "浦飯{end}",
-  "en": ""
+  "en": "Urameshi"
  },
  {
   "id": "S002",
   "off": "04657D",
   "jp": "幽助{end}",
-  "en": ""
+  "en": "Yusuke"
  },
  {
   "id": "S003",
   "off": "046583",
   "jp": "桑原和真{end}",
-  "en": ""
+  "en": "Kazuma Kuwabara"
  },
  {
   "id": "S004",
   "off": "04658D",
   "jp": "桑原{end}",
-  "en": ""
+  "en": "Kuwabara"
  },
  {
   "id": "S005",
   "off": "046593",
   "jp": "和真{end}",
-  "en": ""
+  "en": "Kazuma"
  },
  {
   "id": "S006",
   "off": "046599",
   "jp": "飛影{end}",
-  "en": ""
+  "en": "Hiei"
  },
  {
   "id": "S007",
   "off": "04659F",
   "jp": "蔵馬{end}",
-  "en": ""
+  "en": "Kurama"
  },
  {
   "id": "S008",
   "off": "0465A5",
   "jp": "幻海{end}",
-  "en": ""
+  "en": "Genkai"
  },
  {
   "id": "S009",
   "off": "0465AB",
   "jp": "朱雀{end}",
-  "en": ""
+  "en": "Suzaku"
  },
  {
   "id": "S00A",
   "off": "0465B1",
   "jp": "酎{end}",
-  "en": ""
+  "en": "Chu"
  },
  {
   "id": "S00B",
   "off": "0465B5",
   "jp": "陣{end}",
-  "en": ""
+  "en": "Jin"
  },
  {
   "id": "S00C",
   "off": "0465B9",
   "jp": "死々若丸{end}",
-  "en": ""
+  "en": "Shishiwakamaru"
  },
  {
   "id": "S00D",
   "off": "0465C3",
   "jp": "戸愚呂{end}",
-  "en": ""
+  "en": "Toguro"
  },
  {
   "id": "S00E",
   "off": "0465CB",
   "jp": "戸愚呂１００％{end}",
-  "en": ""
+  "en": "Toguro 100%"
  },
  {
   "id": "S00F",
   "off": "0465DB",
   "jp": "戸愚呂３０％{end}",
-  "en": ""
+  "en": "Toguro 30%"
  },
  {
   "id": "S010",
   "off": "0465E9",
   "jp": "１００％{end}",
-  "en": ""
+  "en": "100%"
  },
  {
   "id": "S011",
   "off": "0465F3",
   "jp": "３０％{end}",
-  "en": ""
+  "en": "30%"
  },
  {
   "id": "S012",
   "off": "0465FB",
   "jp": "覆面{end}",
-  "en": ""
+  "en": "Masked Fighter"
  },
  {
   "id": "S013",
   "off": "046601",
   "jp": "少女幻海{end}",
-  "en": ""
+  "en": "Young Genkai"
  },
  {
   "id": "S014",
   "off": "04660B",
   "jp": "戸愚呂８０％{end}",
-  "en": ""
+  "en": "Toguro 80%"
  },
  {
   "id": "S015",
   "off": "046619",
   "jp": "８０％{end}",
-  "en": ""
+  "en": "80%"
  },
  {
   "id": "S016",
   "off": "046621",
   "jp": "桑原くん{end}",
-  "en": ""
+  "en": "Kuwabara"
  },
  {
   "id": "S017",
   "off": "04662B",
   "jp": "ば―ちゃん{end}",
-  "en": ""
+  "en": "Grandma"
  },
  {
   "id": "S018",
   "off": "046637",
   "jp": "覆面戦士{end}",
-  "en": ""
+  "en": "Masked Fighter"
  },
  {
   "id": "S019",
   "off": "046641",
   "jp": "霊丸{end}",
-  "en": ""
+  "en": "Spirit Gun"
  },
  {
   "id": "S01A",
@@ -201,115 +201,115 @@
   "id": "S021",
   "off": "046647",
   "jp": "ショットガン{end}",
-  "en": ""
+  "en": "Shotgun"
  },
  {
   "id": "S022",
   "off": "046655",
   "jp": "霊光弾{end}",
-  "en": ""
+  "en": "Spirit Ball"
  },
  {
   "id": "S023",
   "off": "04665D",
   "jp": "超霊丸{end}",
-  "en": ""
+  "en": "Super Spirit Gun"
  },
  {
   "id": "S024",
   "off": "046665",
   "jp": "スピンキック{end}",
-  "en": ""
+  "en": "Spin Kick"
  },
  {
   "id": "S025",
   "off": "046673",
   "jp": "霊剣{end}",
-  "en": ""
+  "en": "Spirit Sword"
  },
  {
   "id": "S026",
   "off": "046679",
   "jp": "霊剣二刀流{end}",
-  "en": ""
+  "en": "Twin Spirit Swords"
  },
  {
   "id": "S027",
   "off": "046685",
   "jp": "ダッシュ霊剣{end}",
-  "en": ""
+  "en": "Dash Spirit Sword"
  },
  {
   "id": "S028",
   "off": "046693",
   "jp": "巨大霊気棒{end}",
-  "en": ""
+  "en": "Giant Spirit Club"
  },
  {
   "id": "S029",
   "off": "04669F",
   "jp": "首位打者剣{end}",
-  "en": ""
+  "en": "Batting Champ Sword"
  },
  {
   "id": "S02A",
   "off": "0466AB",
   "jp": "邪王炎殺剣{end}",
-  "en": ""
+  "en": "Sword of the Darkness Flame"
  },
  {
   "id": "S02B",
   "off": "0466B7",
   "jp": "邪王炎殺煉獄焦{end}",
-  "en": ""
+  "en": "Fist of the Mortal Flame"
  },
  {
   "id": "S02C",
   "off": "0466C7",
   "jp": "邪王炎殺黒龍波{end}",
-  "en": ""
+  "en": "Dragon of the Darkness Flame"
  },
  {
   "id": "S02D",
   "off": "0466D7",
   "jp": "残像{end}",
-  "en": ""
+  "en": "Afterimage"
  },
  {
   "id": "S02E",
   "off": "0466DD",
   "jp": "[A5][93]みつけ{end}",
-  "en": ""
+  "en": "Stomp"
  },
  {
   "id": "S02F",
   "off": "0466E7",
   "jp": "薔薇棘鞭刃{end}",
-  "en": ""
+  "en": "Rose Whip"
  },
  {
   "id": "S030",
   "off": "0466F3",
   "jp": "風華円舞陣{end}",
-  "en": ""
+  "en": "Rose Petal Storm"
  },
  {
   "id": "S031",
   "off": "0466FF",
   "jp": "妖狐変化{end}",
-  "en": ""
+  "en": "Fox Transformation"
  },
  {
   "id": "S032",
   "off": "046709",
   "jp": "スライディング{end}",
-  "en": ""
+  "en": "Sliding Kick"
  },
  {
   "id": "S033",
   "off": "046719",
   "jp": "毒の出玉{end}",
-  "en": ""
+  "en": "Poison Ball"
  },
  {
   "id": "S034",

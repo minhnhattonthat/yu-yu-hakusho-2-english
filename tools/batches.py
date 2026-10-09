@@ -30,6 +30,7 @@ BATCHES = {
     "b02": rng(0x80, 0xAF),
     "b03": rng(0xB0, 0xF7) + rng(0x100, 0x101) + rng(0x103, 0x104),
     "special": ["M003", "M004", "M005", "M01E", "M01F"] + rng(0x64, 0x6F) + ["M0F8", "M0F9", "M102"],
+    "subs": [f"S{i:03X}" for i in range(64)],
     "other": [f"B{i:02X}" for i in range(23)] + [f"T{i:02X}" for i in range(1, 6)] + ["P00"],
 }
 CTRL = re.compile(r"\{[^}]*\}")
