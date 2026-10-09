@@ -88,6 +88,7 @@ GRIDS["M0FA"] = [4, 5, 2, 1, 4, 3, 1, 6, 4, 4, 4, 1, 3, 1, 3, 2, 1, 5, 2, 4, 5, 
                  1, 1, 1, 1, 3]
 GRIDS["M0FB"] = [4, 4, 4, 5, 6, 6, 8, 5, 2, 4]
 GRIDS["M11C"] = [4]
+GRIDS["M0F8"] = GRIDS["M0F9"] = [10, 12, 13, 13, 12]               # secret-code hint ($8A:F721 tilemap)
 GRIDS.update({f"M{i:03X}": [7, 5] for i in range(0x11D, 0x128)})   # cast: 7-cell row over a 5-cell row
 
 

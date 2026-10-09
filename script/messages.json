@@ -1491,13 +1491,13 @@
   "id": "M0F8",
   "off": "04737B",
   "jp": "タイトル画面で　　　↑↓→↘↓↙←　ＹＸＡＢと入力すると、バトルモ―ドで、使えるキャラクタ―が、ふえま―す。{end}",
-  "en": ""
+  "en": "On the title screen, | enter ↑↓→↘↓↙← YXAB | and more characters | can be used in Battle! |"
  },
  {
   "id": "M0F9",
   "off": "0473E9",
   "jp": "タイトル画面で　　　↓↑ＬＬＲＲ　ＹＸＡＹ　と入力すると、バトルモ―ドで、キャラクタ―がぜんいん使えるようになりま―す。{end}",
-  "en": ""
+  "en": "On the title screen, | enter ↓↑LLRR YXAY | and every character | can be used in Battle! |"
  },
  {
   "id": "M0FA",
