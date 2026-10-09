@@ -13,6 +13,7 @@ import sys
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent))
+import fit  # noqa: E402
 import font  # noqa: E402
 import text  # noqa: E402
 
@@ -120,8 +121,11 @@ def insert(rom, entries, table_off, alloc, mode, widths):
         if src["id"] not in placed:
             if mode == "marker":
                 data = encode_en(marker(src, widths))
-            elif src.get("en"):
-                data = encode_en(src["en"])
+            elif mode != "jp" and src.get("en"):
+                wrapped, errs = fit.wrap(src["en"], src["id"])
+                if errs:
+                    raise SystemExit("\n".join(errs))
+                data = encode_en(wrapped)
             else:
                 data = text.JP.encode(src["jp"])
             placed[src["id"]] = snes(alloc.put(rom, data))

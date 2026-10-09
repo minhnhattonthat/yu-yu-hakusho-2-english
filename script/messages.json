@@ -675,97 +675,97 @@
   "id": "M070",
   "off": "043D71",
   "jp": "{clr}不良少年　浦飯幽助は、{n}交通事故から子供を{n}かばったことで、{n}いのちをおとした。{end}",
-  "en": ""
+  "en": "{clr}Yusuke Urameshi, juvenile delinquent, lost his life saving a child from a traffic accident."
  },
  {
   "id": "M071",
   "off": "043DC5",
   "jp": "{clr}よていがいの幽助の死に{n}とまどう霊界であったが{n}エンマ大王の息子{n}コエンマは{end}",
-  "en": ""
+  "en": "{clr}Yusuke's unscheduled death threw Spirit World into confusion, but King Enma's son, Koenma,"
  },
  {
   "id": "M072",
   "off": "043E15",
   "jp": "{clr}霊界たんていとして{n}はたらくということを{n}じょうけんに、{n}幽助を生き返らせた。{end}",
-  "en": ""
+  "en": "{clr}brought Yusuke back to life, on the condition that he work as a Spirit Detective."
  },
  {
   "id": "M073",
   "off": "043E67",
   "jp": "{clr}生き返ることのできた{n}幽助は、じゆうを{n}満喫していたが、そこへ{n}幽助をライバルとする{n}桑原が現れた。{end}",
-  "en": ""
+  "en": "{clr}Back among the living, Yusuke was enjoying his freedom when along came Kuwabara, his self-proclaimed rival."
  },
  {
   "id": "M074",
   "off": "043ECF",
   "jp": "{clr}桑原とらんぼうな再会を{n}した幽助に、{n}霊界たんていとしての{n}最初の指令が下った。{end}",
-  "en": ""
+  "en": "{clr}Right after a rowdy reunion with Kuwabara, Yusuke received his first case as a Spirit Detective."
  },
  {
   "id": "M075",
   "off": "043F23",
   "jp": "{clr}その指令は、霊界より{n}妖怪に盗まれた{n}三大秘宝『餓鬼玉』{n}『暗黒鏡』『降魔の剣』{n}をとりもどすこと。{end}",
-  "en": ""
+  "en": "{clr}His mission: recover the Three Treasures that demons had stolen from Spirit World: the Orb of Baast, the Forlorn Hope and the Shadow Sword."
  },
  {
   "id": "M076",
   "off": "043F8B",
   "jp": "{clr}コエンマにおそわった{n}霊丸で剛鬼を倒し、{n}餓鬼玉をとりもどした{n}幽助は、桑原とともに{n}次なる妖怪を目指す。{end}",
-  "en": ""
+  "en": "{clr}With the Spirit Gun Koenma taught him, Yusuke beat Gouki and took back the Orb of Baast. Now he and Kuwabara set out after the next demon."
  },
  {
   "id": "M077",
   "off": "043FF9",
   "jp": "{clr}暗黒鏡を持つ相手は、{n}蔵馬という謎の妖怪。{n}二人は、蔵馬のいる病院{n}へとむかった。{end}",
-  "en": ""
+  "en": "{clr}The Forlorn Hope was in the hands of a mysterious demon named Kurama. The two headed for the hospital where he was."
  },
  {
   "id": "M078",
   "off": "04404F",
   "jp": "{clr}蔵馬が　暗黒鏡を{n}盗んだのは、{n}母親の病気をなおし、{n}いのちを救うためで{n}あった。{end}",
-  "en": ""
+  "en": "{clr}Kurama had stolen the Forlorn Hope to cure his mother's illness and save her life."
  },
  {
   "id": "M079",
   "off": "0440A5",
   "jp": "{clr}暗黒鏡は、満月の夜に{n}願いをいえば、おのれの{n}いのちとひきかえに{n}願いをかなえる鏡。{end}",
-  "en": ""
+  "en": "{clr}Make a wish to the Forlorn Hope on the night of a full moon, and the mirror grants it in exchange for your life."
  },
  {
   "id": "M07A",
   "off": "0440FD",
   "jp": "{clr}母親のために　いのちを{n}なげだすという蔵馬に{n}心を動かされた幽助は、{n}自らのいのちを鏡に{n}分けあたえ{end}",
-  "en": ""
+  "en": "{clr}Moved by Kurama's resolve to give his life for his mother, Yusuke offered the mirror part of his own life,"
  },
  {
   "id": "M07B",
   "off": "044165",
   "jp": "{clr}蔵馬と母親、{n}りょうほうのいのちを{n}見事に救うのだった。{end}",
-  "en": ""
+  "en": "{clr}and saved both Kurama and his mother."
  },
  {
   "id": "M07C",
   "off": "0441A1",
   "jp": "{clr}のこる秘宝は、きった{n}相手を妖怪にかえる降魔{n}の剣。それは飛影という{n}正体不明の妖怪が{n}持っていた。{end}",
-  "en": ""
+  "en": "{clr}The last treasure was the Shadow Sword, which turns anyone it cuts into a demon. It was held by Hiei, a demon of unknown origin."
  },
  {
   "id": "M07D",
   "off": "044209",
   "jp": "{clr}秘宝がすでに、二つも{n}幽助にうばわれたことを{n}しった飛影は、幽助の{n}おさななじみの蛍子を{n}さらう。{end}",
-  "en": ""
+  "en": "{clr}Learning that Yusuke had already taken back two of the treasures, Hiei kidnapped Keiko, Yusuke's childhood friend."
  },
  {
   "id": "M07E",
   "off": "04426F",
   "jp": "{clr}秘宝をわたせとの飛影の{n}ようきゅうに、幽助らは{n}まちはずれの倉庫にむか{n}い、飛影の望みどおりに{n}宝をわたす。{end}",
-  "en": ""
+  "en": "{clr}Hiei demanded the treasures, so Yusuke and the others went to a warehouse at the edge of town and handed them over."
  },
  {
   "id": "M07F",
   "off": "0442DF",
   "jp": "{clr}だが蛍子は、降魔の剣で{n}妖怪にされつつあった！{n}救うには、飛影を倒し、{n}彼の持つ解毒剤をうばう{n}ほかはない！{end}",
-  "en": ""
+  "en": "{clr}But the Shadow Sword was turning Keiko into a demon! The only way to save her was to beat Hiei and take the antidote he carried!"
  },
  {
   "id": "M080",

@@ -4,4 +4,6 @@ import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
-sys.exit(subprocess.call([sys.executable, "-X", "utf8", "-m", "pytest", "-q", str(ROOT / "tests")], cwd=ROOT))
+tests = subprocess.call([sys.executable, "-X", "utf8", "-m", "pytest", "-q", str(ROOT / "tests")], cwd=ROOT)
+lint = subprocess.call([sys.executable, "-X", "utf8", str(ROOT / "tools" / "batches.py"), "lint"], cwd=ROOT)
+sys.exit(tests or lint)

@@ -82,11 +82,26 @@ sub_ptr:
     tay
     jml $80D979
 
-vwf_clear:                  ; M8 (DB is a WRAM-mirroring bank here)
+vwf_clear:                  ; M8 (DB is a WRAM-mirroring bank here): reset position, pen and mirror
     stz $0B00
     stz $0B01
     lda #$00
     sta.l $7E0000+!vwf_px
+    php
+    rep #$30
+    phx
+    phy
+    phb
+    lda #$0000
+    sta.l $7E0000+!mirror
+    ldx #!mirror
+    ldy #!mirror+2
+    lda #!mirror_end-3
+    mvn $7E,$7E             ; overlapping forward copy = fill with zero
+    plb
+    ply
+    plx
+    plp
     rtl
 
 ; vwf_glyph: draw one code at ($0B00,$0B01) into the mirror and queue the upload. A16 X16 on entry.
@@ -229,18 +244,7 @@ draw_ascii:
     bcc +
     rts
 +   pha                     ; glyph index
-    ; touched range ends 2 cells after the pen cell (pen cell + possible spill), clamped to the mirror
-    lda !cell
-    inc
-    inc
-    asl #6
-    cmp #!mirror_end
-    bcc +
-    lda #!mirror_end
-+   cmp !dmahi
-    bcc +
-    sta !dmahi
-+   ; pen tile column
+    ; pen tile column
     lda !cell
     asl #6
     sta !tbase
@@ -340,9 +344,27 @@ draw_ascii:
     sep #$20
     bra .byte
 .advance:
+    ; upload through the last cell inked: pen cell, or the next one if px + w - 1 >= 16
     lda !vwf_px
     clc
     adc !w
+    pha                     ; new px, before wrapping
+    dec
+    cmp #$10                ; C = glyph reached the next cell
+    rep #$20
+    lda !cell
+    inc
+    bcc +
+    inc
++   asl #6
+    cmp #!mirror_end
+    bcc +
+    lda #!mirror_end
++   cmp !dmahi
+    bcc +
+    sta !dmahi
++   sep #$20
+    pla
     cmp #$10
     bcc +
     sbc #$10
