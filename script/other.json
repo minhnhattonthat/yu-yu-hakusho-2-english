@@ -153,13 +153,13 @@
   "id": "T02",
   "off": "00FA19",
   "jp": "霊力　　　　　　０{end}",
-  "en": "Spirit Energy | ０"
+  "en": "Spirit | ０"
  },
  {
   "id": "T03",
   "off": "00FA2D",
   "jp": "経験　　　　　　０{end}",
-  "en": "Experience | ０"
+  "en": "EXP | ０"
  },
  {
   "id": "T04",

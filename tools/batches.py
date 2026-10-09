@@ -93,7 +93,8 @@ def check_entry(mid, jp, en, terms):
     _, werrs = fit.wrap(en, mid)
     errs += werrs
     low = en.lower()
-    rest = "" if mid in BATCHES["credits"] else jp    # credits: cast rows hold short names; drawn with another font
+    # credits (cast rows hold short names) and the tally labels (3 cells) can't carry full glossary forms
+    rest = "" if mid in BATCHES["credits"] or mid[0] == "T" else jp
     for tj, ten, avoid in sorted(terms, key=lambda t: -len(t[0])):   # longest first: 霊界たんてい before 霊界
         if tj in rest:
             rest = rest.replace(tj, "\0")
