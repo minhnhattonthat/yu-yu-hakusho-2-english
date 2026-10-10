@@ -24,7 +24,13 @@ def draw_name(font_path, name):
     big = big.crop(big.getbbox())
     w = min(64, max(1, big.width // SCALE))
     h = max(1, round(big.height / SCALE))
-    return big.resize((w, h), Image.LANCZOS).point(lambda v: 1 if v > 120 else 0)
+    m = big.resize((w, h), Image.LANCZOS).point(lambda v: 1 if v > 120 else 0)
+    px = m.load()
+    lone = [(x, y) for y in range(h) for x in range(w) if px[x, y]
+            and not (x > 0 and px[x - 1, y]) and not (x + 1 < w and px[x + 1, y])]   # 1 px specks on round tops
+    for x, y in lone:
+        px[x, y] = 0
+    return m
 
 
 def main():
