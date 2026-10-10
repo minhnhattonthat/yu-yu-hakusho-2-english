@@ -10,7 +10,8 @@ Translated:
 - Win/lose quotes, the character-select and tournament announcer, tournament endings.
 - Menus (mode select, sub-menus, sound test), the Options screen, the training move
   lists, battle labels (Round 1, Fight!, Winner...), fight HUD names, the story
-  result tally and the punching mini-game.
+  result tally and the punching mini-game (with its rage gauge).
+- The title screen (logo, subtitle, copyright lines) and the attract-mode fighter names.
 - Staff credits and the voice cast.
 
 Names follow the English anime dub (Yusuke Urameshi, Kuwabara, Kurama, Hiei, Genkai,
@@ -38,8 +39,8 @@ Notes
 
 Known issues
 ------------
-- The attract-mode intro still shows the fighters' names in Japanese, and the title
-  logo is kept as it is.
+- The brush-calligraphy series logo behind the mode select and story pages is still
+  the Japanese artwork.
 - The story tally screen has room for three letters' worth of label, so "Experience"
   reads "EXP".
 - The staff roll reuses letter cells of the original Japanese layout, so two
