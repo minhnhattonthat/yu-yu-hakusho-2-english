@@ -15,6 +15,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).parent))
 import fit  # noqa: E402
 import font  # noqa: E402
+import graphics  # noqa: E402
 import hud  # noqa: E402
 import options  # noqa: E402
 import text  # noqa: E402
@@ -270,6 +271,8 @@ def build(out, mode):
     insert(rom, msgs, MSG_TABLE, alloc, mode, wbin)
     insert(rom, subs, SUB_TABLE, alloc, mode, wbin)
     insert_other(rom, json.loads((ROOT / "script" / "other.json").read_text(encoding="utf-8")), mode)
+    if mode != "jp":
+        graphics.apply(rom, text.ROM.read_bytes())
     out.write_bytes(rom)
     used = sum(r[0] - a for r, (a, _) in zip(alloc.regions, FREE))
     print(f"built {out} ({mode}), text {used} bytes")

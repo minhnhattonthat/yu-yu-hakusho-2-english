@@ -32,3 +32,12 @@ DCEA-DCEB          $81 options font DMA size
 DD4A-DD53          $81 options map load (raw)
 E12E-E149          $81 options label pointers
 1AEE80-1AF67F      $B5 options BG3 map
+56AC9-571FF        $8A:EAC9 intro names tiles (re-compressed in place)
+196B9E-196D72      $B2:EB9E mini-game gauge tiles (RAGE, in place)
+1A0000-1A1353      $B4:8000 title BG1 tiles (logo, subtitle; in place)
+1A19A8-1A1CB0      $B4:99A8 title BG1 map (in place)
+1A6EE9-1A7FFF      $B4 tail: title BG3 tiles + map (copyright lines)
+17C75F-17C763      $AF:C75E title BG3 tile block pointer
+17C7CD-17C7D1      $AF:C7CC title BG3 map pointer
+17CD0C-17CD10      $AF:CD0B title (return path) BG3 tile block pointer
+17CDCF-17CDD3      $AF:CDCE title (return path) BG3 map pointer

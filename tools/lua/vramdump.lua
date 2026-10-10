@@ -3,6 +3,9 @@ local function dump()
   local t = {}
   for a = 0, 0xFFFF do t[#t + 1] = string.char(emu.read(a, emu.memType.snesVideoRam)) end
   L.write_file(OUT .. "vram.bin", table.concat(t))
+  local c = {}
+  for a = 0, 0x1FF do c[#c + 1] = string.char(emu.read(a, emu.memType.snesCgRam)) end
+  L.write_file(OUT .. "cgram.bin", table.concat(c))
   local s = emu.getState()
   local keys = {}
   for k, v in pairs(s) do if k:find("^ppu") then keys[#keys + 1] = k .. "=" .. tostring(v) end end

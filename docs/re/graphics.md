@@ -21,7 +21,25 @@ Y VRAM, $00 size); `$81:968B` = $7E8000 -> VRAM DMA.
   4-7 button icons, 8/9 OFF/ON, 10-12 defence level. New lists at `$81:FF30`.
 - 1-player mode blanks the 2P panel (`$81:DD61`, cols 23-28 only), so 2P labels must stay within those columns.
 
+## Block replacement (tools/gfx.py, tools/graphics.py)
+`gfx.Gfx` decodes an LZ block, takes edited data, re-compresses it (`lz.compress`, within ~2% of the game's size) and
+overwrites the original when it fits and nothing else loads it; otherwise it goes to `graphics.FREE` and the loaders
+(`LDX #bank / LDA #addr / JSL $81:8CF3|8C35`, either order) are repointed. `only=` limits which loaders move (the namco
+splash `$AF:C60B` shares `$B4:9354` with the title and keeps the original). Every touched range is in `allowed_ranges.txt`.
+- Title (`$AF:C73C`, return path `$AF:CD0B`): BG1 tiles `$B4:8000` (4bpp, 252 tiles, pal 2) + map `$B4:99A8` (screen 1 rows
+  0-10 = logo, screen 2 rows 11-13 = subtitle); BG3 tiles `$B4:9354` (2bpp; text index 2, shadow 3) + map `$B4:9CB1`
+  (screen rows 14-26: PUSH START 14, namcot 16-17, copyright 19-20 / 22-23, 1994 line 25-26). The logo is
+  `art/title_logo.png` (256x88 indices; `tools/make_logo.py` draws "YU YU / HAKUSHO" and keeps the gold 2; edit the PNG by
+  hand if wanted), cut into deduplicated tiles. Subtitle "Fighting Chapter" and the two copyright lines use the VWF font.
+- Mini-game gauge: `$B2:EB9E` (4bpp, loads at BG1 tile $10, pal 1: 15 white / 14 black); 怒 was cells $18-$1F,$28-$2B, now
+  "RAGE" in the two cell rows beside the bar.
+- Intro names: `$8A:EAC9` (2bpp, 16 tiles wide; each name 8x4 tiles = 64x32 px: Yusuke, Kurama top, Kuwabara, Hiei bottom),
+  `art/intro_names.png` from `tools/make_names.py`. The maps that place them are unchanged (width limit 64 px).
+
+## Debug views
+`tools/bgview.py` (BG layer from a dump), `tools/oamview.py` (sprites), `tools/gfxview.py` (block tiles),
+`tools/lua/vramseq.lua` / `titletrace.lua` (timed dumps, decompress + DMA log). Run timing varies between runs (autoplay),
+so dump a frame window or trigger on a VRAM value instead of an absolute frame.
+
 ## Not done
-- Attract-mode name kanji: LZ block `$8A:EAC9` (2bpp, names 4 tiles wide x 2, two styles); the intro tilemaps
-  (`$8A:F4CC`, `$8A:F2D1`) would need widening for English.
-- Title logo, copyright lines, mini-game "怒" gauge.
+- Brush-calligraphy "幽遊白書" backdrop of the mode select and story cards (tiles `$B2:C6A3`, 4bpp 192 tiles).
