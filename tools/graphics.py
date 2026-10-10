@@ -130,6 +130,7 @@ def intro_names(g):
         for tx in range(16):
             px = [[png.getpixel((tx * 8 + x, ty * 8 + y)) for x in range(8)] for y in range(8)]
             d[(ty * 16 + tx) * 16:(ty * 16 + tx + 1) * 16] = gfx.tile_bytes(px, 2)
+    d[0x80 * 16:0x81 * 16] = bytes(16)           # stray sparkle tile the old Yusuke map still points at
     g.replace(0x8A, 0xEAC9, d)
 
 
