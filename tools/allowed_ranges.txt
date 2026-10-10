@@ -32,7 +32,10 @@ DCEA-DCEB          $81 options font DMA size
 DD4A-DD53          $81 options map load (raw)
 E12E-E149          $81 options label pointers
 1AEE80-1AF67F      $B5 options BG3 map
-56AC9-571FF        $8A:EAC9 intro names tiles (re-compressed in place)
+7735-773C          $80:F735 mode banner title scroll per mode (centred)
+78BD-78BE          $80:F8BC main menu HDMA template: "Mode Select" banner scroll
+78FD-78FE          $80:F8F7 Sound HDMA template: banner scroll
+56AC9-571FF       $8A:EAC9 intro names tiles (re-compressed in place)
 572D1-574CB        $8A:F2D1 intro name map (re-compressed in place)
 196B9E-196D72     $B2:EB9E mini-game gauge tiles (RAGE, in place)
 1A0000-1A1353      $B4:8000 title BG1 tiles (logo, subtitle; in place)

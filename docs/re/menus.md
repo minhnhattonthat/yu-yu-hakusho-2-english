@@ -13,5 +13,10 @@ shows its stream index) or a VRAM dump + `tools/cellmap.py DUMP --map 4800|7800 
 | M11C-M127 | voice cast | 7, 5 | English puts the actor on the 7-cell row, the character on the 5-cell row |
 | T01-T04 | story tally | 8, 1 | only 3 cells of the label show (the score overwrites the rest) |
 
+Mode-select banner title: the same label rows as the list (map `$A6:F737`), shown through a 16-line HDMA strip
+(channel 1 -> BG3HOFS/VOFS, table `$7E:0220`). Its scroll: `$80:F72D` (VOFS) / `$80:F735` (HOFS) per mode 0-3, Sound
+template `$80:F8F7`, main "Mode Select" template `$80:F8BC`. `graphics.mode_headers` sets the HOFS so each English
+title is centred; shifting the map instead also moves the list.
+
 Battle labels (other.json B): drawn at cell 55/59 over the fight; 5 cells visible; `$85:B3DA` holds a BG3 scroll
 offset per label that centres it, recomputed by the build from the width change.

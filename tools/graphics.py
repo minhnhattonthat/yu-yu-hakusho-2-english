@@ -1,6 +1,7 @@
 """English versions of the graphics that are not text-engine strings (docs/re/graphics.md): mini-game rage gauge, title
 screen, intro names. Each function edits blocks through gfx.Gfx; build.py calls apply().
 """
+import json
 import struct
 import sys
 from pathlib import Path
@@ -8,6 +9,7 @@ from pathlib import Path
 from PIL import Image
 
 sys.path.insert(0, str(Path(__file__).parent))
+import fit  # noqa: E402
 import gfx  # noqa: E402
 import gfxtext  # noqa: E402
 
@@ -146,7 +148,27 @@ def intro_names(g):
     g.replace(0x8A, 0xF2D1, struct.pack("<1024H", *ents), il=False)
 
 
+def mode_headers(rom):
+    """Centre the mode-select banner titles. The banner is a 16-line HDMA strip (channel 1 -> BG3HOFS/VOFS, table at
+    $7E:0220) that scrolls one label row of the BG3 map into view; its horizontal scroll comes from $80:F735 (word per
+    mode 0-3: Story, Tournament, Battle, Training), the Sound template $80:F8F7 (+6) and, for "Mode Select" itself, the
+    main template $80:F8BC (+1). Label ink starts at map column 9 (47 for Mode Select), so screen x = 8 * col - scroll;
+    the banner centre is x = 128. Map columns that scroll in from the left are blank."""
+    msgs = json.loads((Path(__file__).resolve().parent.parent / "script" / "messages.json").read_text(encoding="utf-8"))
+    runs = [r.strip() for r in next(e for e in msgs if e["id"] == "M004")["en"].split("|")]
+
+    def scroll(label, col):
+        ink = sum(fit.WIDTHS[ord(c) - 0x20] for c in label) - 1   # last column is the gap
+        return round(8 * col + ink / 2 - 128) & 0xFFFF
+
+    for i, label in enumerate((runs[0], runs[2], runs[3], runs[4])):
+        rom[0x7735 + 2 * i:0x7737 + 2 * i] = scroll(label, 9).to_bytes(2, "little")
+    rom[0x78FD:0x78FF] = scroll(runs[5], 9).to_bytes(2, "little")
+    rom[0x78BD:0x78BF] = scroll(runs[15], 47).to_bytes(2, "little")
+
+
 def apply(rom, orig):
+    mode_headers(rom)
     g = gfx.Gfx(orig)
     intro_names(g)
     gauge(g)
