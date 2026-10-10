@@ -28,8 +28,8 @@ def main():
         for y in range(16):
             for x in range(len(g[0])):
                 if g[y][x] and 2 * x + 1 < W:
-                    for dy in (0, 1):
-                        for dx in (0, 1):
+                    for dy in (0, 1, 2):          # 2x scale plus 1 px extra right/down = 3 px strokes (bold)
+                        for dx in (0, 1, 2):
                             im.putpixel((2 * x + dx, i * 32 + 2 * y + dy), 1)
     OUT.parent.mkdir(exist_ok=True)
     im.save(OUT)
