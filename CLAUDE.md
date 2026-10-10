@@ -23,5 +23,6 @@ Skill: translate-retro-game (H:/translation/.claude/skills/translate-retro-game/
 - Done: VWF + relocation, all script text translated (b01-b03 + menus, move lists, battle labels, substrings, credits), astra review b01, self-review b02/b03, story autoplay tour + credits checked in-game.
 - Also done: HUD names, options screen, inline strings (training banner, stereo/mono, mini-game), hint screen. Release: `python -X utf8 tools/release.py --version 1.0` -> release/ (zip = BPS + README).
 - v1.0 release built locally (release/, not published): BPS verified on a clean ROM, smoke OK, full story + credits autoplay tour checked.
-- Next: attract-mode intro names are sprites (A:EAC9 tiles, OAM tables not found yet); astra whole-project review (work/tl/all.pairs.txt) never ran (Agent tool blocked).
+- Also done: title logo/subtitle/copyright lines, attract-mode names, mini-game RAGE gauge (tools/graphics.py, art/*.png, docs/re/graphics.md). release/ was built before these: rerun `tools/release.py` before publishing.
+- Next: brush-calligraphy 幽遊白書 backdrop of mode select/story cards (`$B2:C6A3`) is still Japanese; astra whole-project review (work/tl/all.pairs.txt) never ran (Agent tool blocked).
 - Known issues: staff roll "Ma Ma"/"E ri ri n" spacing (original tilemap reuses cells); credit "Nitta" lacks the one-cell given name 石.
