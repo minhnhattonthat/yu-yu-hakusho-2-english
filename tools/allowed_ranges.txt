@@ -33,7 +33,8 @@ DD4A-DD53          $81 options map load (raw)
 E12E-E149          $81 options label pointers
 1AEE80-1AF67F      $B5 options BG3 map
 56AC9-571FF        $8A:EAC9 intro names tiles (re-compressed in place)
-196B9E-196D72      $B2:EB9E mini-game gauge tiles (RAGE, in place)
+572D1-574CB        $8A:F2D1 intro name map (re-compressed in place)
+196B9E-196D72     $B2:EB9E mini-game gauge tiles (RAGE, in place)
 1A0000-1A1353      $B4:8000 title BG1 tiles (logo, subtitle; in place)
 1A19A8-1A1CB0      $B4:99A8 title BG1 map (in place)
 1A6EE9-1A7FFF      $B4 tail: title BG3 tiles + map (copyright lines)

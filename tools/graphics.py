@@ -122,16 +122,28 @@ def title_bg3(g):
 
 
 def intro_names(g):
-    """Attract-mode fighter names (BG3, 2bpp, $8A:EAC9): 4 names of 8x4 tiles in a 16-tile-wide layout, replaced by
-    art/intro_names.png (tools/make_names.py). The tilemaps that place them stay as they are."""
-    d = bytearray(g.raw(0x8A, 0xEAC9))
+    """Attract-mode fighter names (BG3, 2bpp, $8A:EAC9 tiles, $8A:F2D1 map): art/intro_names.png (tools/make_names.py,
+    4 strips of 32 px) is cut into deduplicated tiles and each name's 4 map rows are rewritten, centred where the kanji
+    were. Map rows per name (4 rows x 32 entries, copied to VRAM as one 0x100 byte chunk): Yusuke 12, Kurama 4,
+    Kuwabara 8, Hiei 0; kanji centre x in pixels from the old map columns."""
+    d = bytearray(len(g.raw(0x8A, 0xEAC9)))
+    ents = list(struct.unpack("<1024H", g.raw(0x8A, 0xF2D1, il=False)))
     png = Image.open(NAMES)
-    for ty in range(8):
-        for tx in range(16):
-            px = [[png.getpixel((tx * 8 + x, ty * 8 + y)) for x in range(8)] for y in range(8)]
-            d[(ty * 16 + tx) * 16:(ty * 16 + tx + 1) * 16] = gfx.tile_bytes(px, 2)
-    d[0x80 * 16:0x81 * 16] = bytes(16)           # stray sparkle tile the old Yusuke map still points at
+    tile = _tile_allocator(d, range(1, len(d) // 16), 2)
+    for i, (row, centre) in enumerate(((12, 128), (4, 200), (8, 56), (0, 56))):
+        cols = [x for x in range(png.width) if any(png.getpixel((x, i * 32 + y)) for y in range(32))]
+        w = max(cols) + 1
+        n = (w + 7) // 8
+        x0 = max(0, min(256 - n * 8, centre - w // 2)) // 8     # first map column; text starts at its left edge
+        for r in range(4):
+            for c in range(32):
+                ents[(row + r) * 32 + c] = 0x2000
+            for c in range(n):
+                px = [[png.getpixel((c * 8 + x, i * 32 + r * 8 + y)) if c * 8 + x < png.width else 0
+                       for x in range(8)] for y in range(8)]
+                ents[(row + r) * 32 + x0 + c] = 0x2000 | tile(px, 0)
     g.replace(0x8A, 0xEAC9, d)
+    g.replace(0x8A, 0xF2D1, struct.pack("<1024H", *ents), il=False)
 
 
 def apply(rom, orig):
