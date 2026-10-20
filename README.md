@@ -7,6 +7,9 @@ text and tools that build the patch.
 your own unheadered dump, `Yu Yu Hakusho 2 - Kakutou no Shou (Japan).sfc` (CRC32 EEF45A93). The release README lists
 the hashes, patching steps and known issues.
 
+**Found a bug?** [Report it](../../issues/new/choose): untranslated text, typos, overflow, crashes. Attaching a savestate
+helps most.
+
 ## What is translated
 All story text, menus, move lists, battle labels, the hint screen, the options screen, the training and mini-game text,
 the HUD names, the title logo and copyright lines, attract-mode names and the staff credits. Names follow the official

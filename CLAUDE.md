@@ -18,6 +18,7 @@ Skill: translate-retro-game (H:/translation/.claude/skills/translate-retro-game/
 ## Rulings
 - Official EN names (Funimation dub), Western order, no honorifics (also in staff credits). Credits in English. No abbreviations (flagged exception: tally "EXP", 3-cell label). Specs/plans pre-approved.
 - Review agents: multi-openai gpt-6-astra (Agent dispatch was often blocked by the classifier; self-review then).
+- Player bug reports: GitHub issues (`gh issue list --label bug`). Copy the attached save into `work/states/`, reproduce in the emulator, fix, commit with `Fixes #N`, and update the Status section.
 
 ## Status
 - Done: VWF + relocation, all script text translated (b01-b03 + menus, move lists, battle labels, substrings, credits), astra review b01, self-review b02/b03, story autoplay tour + credits checked in-game.
