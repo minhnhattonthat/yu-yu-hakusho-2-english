@@ -10,10 +10,21 @@ the hashes, patching steps and known issues.
 **Found a bug?** [Report it](../../issues/new/choose): untranslated text, typos, overflow, crashes. Attaching a savestate
 helps most.
 
-## What is translated
-All story text, menus, move lists, battle labels, the hint screen, the options screen, the training and mini-game text,
-the HUD names, the title logo and copyright lines, attract-mode names and the staff credits. Names follow the official
-English (Funimation) dub, in Western order, without honorifics. English uses a variable-width font.
+## Translation status
+| Part | Status |
+|---|---|
+| Story mode, win/lose quotes, announcer, endings | Translated |
+| Menus, options, move lists, battle labels, hint screen, fight HUD names | Translated ("Experience" on the story tally reads "EXP": room for 3 letters) |
+| Training text and the punching mini-game | Translated |
+| Title screen and attract-mode names | Translated (logo, subtitle and copyright lines redrawn in English) |
+| Brush-calligraphy series logo behind mode select and story pages | Left in Japanese (artwork) |
+| Staff credits and voice cast | Translated |
+
+Names follow the official English (Funimation) dub, in Western order, without honorifics. English uses a
+variable-width font.
+
+Known issues: the calligraphy backdrop and "EXP" above; the staff roll reuses the Japanese letter cells, so
+"E ri ri n" and "Ma Ma" are unevenly spaced and the programmer 仁田 石 reads "Nitta".
 
 ## Building from source
 You need your own ROM under `rom/` (gitignored) and asar. See `CLAUDE.md` for the commands
